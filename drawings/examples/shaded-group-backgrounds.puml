@@ -1,4 +1,4 @@
-@startuml foo
+@startuml shaded-group-backgrounds
 
 skinparam SequenceGroupBodyBackgroundColor #FFFFFF90
 

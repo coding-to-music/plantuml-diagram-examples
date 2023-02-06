@@ -84,8 +84,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.351-b10, mixed mode)
     - [Create .png file of the overall system diagram](#create-png-file-of-the-overall-system-diagram)
   - [Hello world for PlantUML](#hello-world-for-plantuml)
   - [Use PlantUML's command line syntax to include it in your own scripts or documentation tools.](#use-plantumls-command-line-syntax-to-include-it-in-your-own-scripts-or-documentation-tools)
-- [Example Plant UML Diagrams](#example-plant-uml-diagrams)
-  - [BattleCode-2023-System-Diagram.png](#battlecode-2023-system-diagrampng)
+- [Example Plant UML Diagrams](#example-plant-uml-diagrams) - [BattleCode-2023-System-Diagram.png](#battlecode-2023-system-diagrampng) - [BattleCode-2023-System-Diagram.png](#battlecode-2023-system-diagrampng) - [BigPicture-Sequence-Diagram.png](#bigpicture-sequence-diagrampng) - [Headquarters-Strategy.png](#headquarters-strategypng) - [RobotPlayer-Horizontal.png](#robotplayer-horizontalpng) - [RobotPlayer.png](#robotplayerpng) - [RobotPlayer-Vertical.png](#robotplayer-verticalpng) - [RunHeadquarters-SwimLanes.png](#runheadquarters-swimlanespng) - [RunHeadquarters-Vertical.png](#runheadquarters-verticalpng) - [swim-lanes.png](#swim-lanespng)
   - [Generic PlantUML Examples](#generic-plantuml-examples)
     - [activity-branches.png](#activity-branchespng)
     - [activity-variables-loops.png](#activity-variables-loopspng)
@@ -113,7 +112,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.351-b10, mixed mode)
     - [colors-heatmap.png](#colors-heatmappng)
     - [colors.png](#colorspng)
     - [example.png](#examplepng)
-    - [foo.png](#foopng)
+    - [shaded-group-backgrounds.png](#shaded-group-backgroundspng)
     - [sequenceDiagram.png](#sequencediagrampng)
     - [sequence.png](#sequencepng)
     - [vertical.png](#verticalpng)
@@ -489,9 +488,9 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/example.png?raw=true)
 
-### foo.png
+### shaded-group-backgrounds.png
 
-![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/foo.png?raw=true)
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/shaded-group-backgrounds.png?raw=true)
 
 ### sequenceDiagram.png
 
