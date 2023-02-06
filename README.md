@@ -85,6 +85,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.351-b10, mixed mode)
   - [Hello world for PlantUML](#hello-world-for-plantuml)
   - [Use PlantUML's command line syntax to include it in your own scripts or documentation tools.](#use-plantumls-command-line-syntax-to-include-it-in-your-own-scripts-or-documentation-tools)
 - [Example Plant UML Diagrams](#example-plant-uml-diagrams)
+  - [BattleCode-2023-System-Diagram.png](#battlecode-2023-system-diagrampng)
   - [Generic PlantUML Examples](#generic-plantuml-examples)
     - [activity-branches.png](#activity-branchespng)
     - [activity-variables-loops.png](#activity-variables-loopspng)
@@ -342,35 +343,44 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 # Example Plant UML Diagrams
 
-## BattleCode-2023-System-Diagram.png
+### BattleCode-2023-System-Diagram.png
 
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/BattleCode-2023-System-Diagram.png?raw=true)
 
-BattleCode-2023-System-Diagram.png
+### BattleCode-2023-System-Diagram.png
+
 ![BattleCode-2023-System-Diagram.png](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/BattleCode-2023-System-Diagram.png?raw=true)
 
-BigPicture-Sequence-Diagram.png
+### BigPicture-Sequence-Diagram.png
+
 ![BigPicture-Sequence-Diagram.png](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/BigPicture-Sequence-Diagram.png?raw=true)
 
-Headquarters-Strategy.png
+### Headquarters-Strategy.png
+
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/Headquarters-Strategy.png?raw=true)
 
-RobotPlayer-Horizontal.png
+### RobotPlayer-Horizontal.png
+
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/RobotPlayer-Horizontal.png?raw=true)
 
-RobotPlayer.png
+### RobotPlayer.png
+
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/RobotPlayer.png?raw=true)
 
-RobotPlayer-Vertical.png
+### RobotPlayer-Vertical.png
+
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/RobotPlayer-Vertical.png?raw=true)
 
-RunHeadquarters-SwimLanes.png
+### RunHeadquarters-SwimLanes.png
+
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/RunHeadquarters-SwimLanes.png?raw=true)
 
-RunHeadquarters-Vertical.png
+### RunHeadquarters-Vertical.png
+
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/RunHeadquarters-Vertical.png?raw=true)
 
-swim-lanes.png
+### swim-lanes.png
+
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/swim-lanes.png?raw=true)
 
 ## Generic PlantUML Examples
