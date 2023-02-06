@@ -342,7 +342,7 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 # Example Plant UML Diagrams
 
-![cases-vs-deaths-August-2021](https://github.com/coding-to-music/coding-to-music.github.io/blob/master/docs/source/assets/Vaccines/Death-Rates/2021-08-03-USA-covid-cases-vs-deaths-per-day.jpg?raw=true)
+## BattleCode-2023-System-Diagram.png
 
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/BattleCode-2023-System-Diagram.png?raw=true)
 
