@@ -1,0 +1,17 @@
+@startuml vertical-groups
+
+skinparam SequenceGroupBodyBackgroundColor #FFFFFF90
+
+box "Internal Service" #LightBlue
+    participant Bob
+    participant Alice
+end box
+
+box "Other" #LightGreen
+    participant Other
+end box
+
+group group
+    Bob -> Alice : hello
+    Alice -> Other : hello
+end

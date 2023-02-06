@@ -1,0 +1,130 @@
+@startuml "BattleCode-2023-System-Diagram" 
+
+' https://plantuml-documentation.readthedocs.io/en/latest/formatting/color-names.html
+' background color #PaleGreen
+' background color #SeaGreen
+
+' scale 1.5
+' top to bottom direction
+
+left to right direction
+
+' Bad
+' !theme spacelab 
+' !theme spacelab-white 
+' !theme blueprint 
+' !theme reddress-darkgreen
+' !theme reddress-lightred
+' !theme reddress-darkblue
+' !theme reddress-darkorange
+' !theme reddress-darkred
+' !theme materia 
+
+' Good
+!theme toy 
+' !theme reddress-lightblue
+' !theme plain 
+' !theme vibrant 
+' !theme superhero 
+' !theme reddress-lightgreen
+' !theme reddress-lightorange
+
+package "Game Run Loop" {
+  class RobotPlayer #YellowGreen {
+    + run() : RobotController
+    + moveRandom() : RobotController, MapLocation
+    + moveTowards() : RobotController, MapLocation
+  }
+}
+
+
+
+package "Robots" {
+  class HeadquartersStrategy #YellowGreen {
+    + addHeadquarter() : RobotController
+    + updateHeadquarterInfo() : RobotController
+    + runHeadquarters() : RobotController
+    + scanHQ() : RobotController
+  }
+
+  class CarrierStrategy #YellowGreen {
+    + runCarrier() : RobotController
+  }
+              
+  class LauncherStrategy #YellowGreen {
+    + runLauncher() : RobotController
+    + scanHQ() : RobotController
+    + setGoal() : RobotController
+  }
+
+  class BoosterStrategy #YellowGreen {
+    + runBooster() : RobotController
+    + scanHQ() : RobotController
+    + setGoal() : RobotController
+  }
+
+  class DestabilizerStrategy #YellowGreen {
+    + runDestabilizer() : RobotController
+    + scanHQ() : RobotController
+    + setGoal() : RobotController
+  }
+
+  class AmplifierStrategy #YellowGreen {
+    + runAmplifier() : RobotController
+    + scanHQ() : RobotController
+    + scanIslands() : RobotController
+    + scanWells() : RobotController
+  }
+}
+
+package "Game Objects" {
+  class Islands #YellowGreen {
+    + updateIslandInfo() : RobotController, islandID
+    + bitPackIslandInfo() : RobotController, islandId, MapLocation
+    + readTeamHoldingIsland() : RobotController, islandId
+    + readIslandLocation() : RobotController, islandId
+    + readMaxIslandHealth() : RobotController, islandId
+    + scanIslands() : RobotController
+  }
+
+  class Enemies #YellowGreen {
+    + clearObsoleteEnemies() : RobotController
+    + reportEnemy() : RobotController, MapLocation
+    + getClosestEnemy() : RobotController
+  }
+
+  class Wells #YellowGreen {
+    + updateWellInfo() : RobotController, WellInfo
+    + addWell() : RobotController, WellInfo
+    + scanWells() : RobotController
+  }
+}
+
+package "Communications and Strategy" {
+  class Communication #YellowGreen {
+    + id : Int
+    + name : String
+    + owner : Person
+    + tryWriteMessages() : RobotController
+  }
+
+  class Pathing #YellowGreen {
+    + moveTowards() : RobotController, MapLocation
+    + locationToInt() : RobotController, MapLocation
+    + intToLocation() : RobotController, int
+  }
+
+  class OptimalResource #YellowGreen {
+    + getOptimalResourceCount() : RobotController
+    + getCarrierMovementCooldown() : RobotController
+    + numTurns() : distance, cooldown, increment
+  }
+}
+
+' "Communications and Strategy" -[hidden]down- "Robots"
+' "Game Run Loop" -[hidden]down- "Robots"
+' "Robots" -[hidden]down- "Game Objects"
+' "Game Objects" -[hidden]down- "Communications and Strategy"
+
+@enduml
+

@@ -1,0 +1,50 @@
+@startuml RunHeadquarters-SwimLanes
+title runHeadquarters Swim-Lanes
+|#pink|RunHeadquarters|
+start
+if (turnCount==1) is (yes) then
+
+' else (1)
+|#lightgray|addHeadquarters|
+#lightgray:**addHeadquarters**;
+' :foo2;
+' else if (TurnCount == 2) then (yes)
+
+'   :updateHeadquarters;
+
+endif
+
+if (TurnCount == 2) then (yes)
+
+  :updateHeadquarters;
+
+|#PaleGreen|updateHeadquarters|
+#lightblue:foo3;
+:foo4;
+
+|#YellowGreen|Final_Actor|
+#palegreen:foo5;
+
+stop
+@enduml
+
+' #pink:**action red**;
+' :foo1;
+' @startuml swim-lanes
+' |#pink|RunHeadquarters|
+' start
+' if (turnCount?) is (not 1) then
+' #pink:**action red**;
+' :foo1;
+' else (1)
+' |#lightgray|addHeadquarters|
+' #lightgray:**addHeadquarters**;
+' :foo2;
+' endif
+' |updateHeadquarters|
+' #lightblue:foo3;
+' :foo4;
+' |Final_Actor|
+' #palegreen:foo5;
+' stop
+' @enduml

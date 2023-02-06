@@ -1,0 +1,18 @@
+@startuml
+class Person {
+  + id : Int
+  + name : String
+  + getName() : String
+  + getPets() : List<Pet>
+}
+
+class Pet {
+  + id : Int
+  + name : String
+  + owner : Person
+  + getName() : String
+  + getOwner() : Person
+}
+
+Person - Pet : owns >
+@enduml

@@ -1,0 +1,12 @@
+@startuml 1components-json-data
+allowmixing
+
+component Component
+()        Interface
+
+json JSON {
+   "fruit":"Apple",
+   "size":"Large",
+   "color": ["Red", "Green"]
+}
+@enduml

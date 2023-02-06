@@ -1,0 +1,23 @@
+@startuml "RobotPlayer-Vertical"
+!theme toy 
+!pragma useVerticalIf on
+start
+if (RobotType=Headquarters) then (yes)
+  :RunHeadquarters;
+elseif (RobotType=Carrier) then (yes)
+  :RunCarrier;
+  stop
+elseif (RobotType=Launcher) then (yes)
+  :RunLauncher;
+elseif (RobotType=Amplifier) then (yes)
+  :RunAmplifier;
+elseif (RobotType=Booster) then (yes)
+  :RunBooster;
+elseif (RobotType=Destabilizer) then (yes)
+  :RunDestabilizer;
+else (nothing)
+endif
+stop
+@enduml
+
+  ' :Text else;

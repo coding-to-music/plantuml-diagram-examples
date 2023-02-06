@@ -1,0 +1,17 @@
+@startuml 1Beta-new-Activity-diagram-syntax
+start
+:start;
+
+if (some question) then (yes)
+  if (some question) then (yes)
+    if (some question) then (yes)
+      : decision 2;
+      stop
+    else (no)
+    endif
+  else (no)
+  endif
+else (no)
+endif
+: decision 1;
+stop

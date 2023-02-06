@@ -1,0 +1,21 @@
+@startuml
+
+skinparam ClassBackgroundColor #Teal
+skinparam ClassFontColor #Red
+skinparam ClassBorderColor #Teal
+
+skinparam ClassStereotypeFontSize 0
+skinparam CircledCharacterFontSize 0
+skinparam CircledCharacterRadius 0
+skinparam ClassBorderThickness 0
+skinparam Shadowing false
+
+class Dummy
+
+skinparam ClassBackgroundColor #Green
+skinparam ClassFontColor #Red
+skinparam ClassBorderColor #Blue
+
+class Dummy2
+
+@enduml

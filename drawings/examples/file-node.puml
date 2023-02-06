@@ -1,0 +1,18 @@
+file  "file example" #palegreen;line:green;line.dashed;text:green {
+package "Game Run Loop" {
+  class RobotPlayer #YellowGreen {
+    + run() : RobotController
+    + moveRandom() : RobotController, MapLocation
+    + moveTowards() : RobotController, MapLocation
+  }
+}
+
+package "Game Run Loop2" {
+  class RobotPlayer2 #YellowGreen {
+    + run() : RobotController2
+    + moveRandom() : RobotController, MapLocation
+    + moveTowards() : RobotController, MapLocation
+  }
+}
+
+

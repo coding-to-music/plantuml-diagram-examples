@@ -1,0 +1,22 @@
+@startuml vertical
+
+package "A" {
+ABase <|-- A1
+ABase <|-- A2
+ABase <|-- A3
+}
+package "B" {
+BBase <|-- B1
+BBase <|-- B2
+BBase <|-- B3
+}
+package "C" {
+CBase <|-- C1
+CBase <|-- C2
+CBase <|-- C3
+}
+
+A2 -[hidden]down- BBase
+B2 -[hidden]down- CBase
+
+@enduml

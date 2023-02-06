@@ -1,0 +1,7 @@
+@startuml
+
+autonumber "<B>[00]"
+Bob -> Alice : Authentication Request
+Bob <- Alice : Authentication Response
+
+@enduml

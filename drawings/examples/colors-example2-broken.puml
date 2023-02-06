@@ -1,0 +1,16 @@
+
+@startuml colors-example
+!define COLORS #FF00FF,#00FF00,#FFFF00,#00FFFF,#FFFFFF
+
+!foreach COLORS
+background color %1
+title %1
+
+package "Your Package" {
+  [Your Class]
+}
+
+end title
+!end
+
+@enduml

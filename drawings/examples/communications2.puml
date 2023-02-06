@@ -1,0 +1,43 @@
+@startuml example
+
+skinparam SequenceGroupBodyBackgroundColor #FFFFFF90
+
+package Person {
+  + id : Int
+  + name : String
+  + getName() : String
+  + getPets() : List<Pet>
+}
+
+@enduml
+
+- static void addHeadquarter(RobotController rc) throws GameActionException {
+- called by RobotPlayer turnCount 1
+
+- static void updateHeadquarterInfo(RobotController rc) throws GameActionException {
+- called by RobotPlayer turnCountd 2
+
+- static void tryWriteMessages(RobotController rc) throws GameActionException {
+- called by runCarrier at end of each loop
+- called by runLauncher in middle of each loop
+
+- static void updateIslandInfo(RobotController rc, int id) throws GameActionException {
+- called by runCarrier at end of scanIslands
+
+- static void clearObsoleteEnemies(RobotController rc) {
+- called by runLauncher at startup after finding headquarters
+
+- static void reportEnemy(RobotController rc, MapLocation enemy) {
+- called by runLauncher at startup after clearObsoleteEnemies
+
+- private static int locationToInt(RobotController rc, MapLocation m) {
+- called by bitPackIslandInfo and addHeadquarter
+
+- private static MapLocation intToLocation(RobotController rc, int m) {
+- called by readIslandLocation, updateHeadquarterInfo, clearObsoleteEnemies, getClosestEnemy
+
+- static int bitPackIslandInfo(RobotController rc, int islandId, MapLocation closestLoc) {
+- called by updateIslandInfo
+
+- static MapLocation readIslandLocation(RobotController rc, int islandId) {
+- called by runCarrier when holding an anchor

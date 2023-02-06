@@ -1,0 +1,45 @@
+@startuml "RobotPlayer-Horizontal"
+
+start
+if (RobotType=Headquarters) then (yes)
+  :RunHeadquarters;
+elseif (RobotType=Carrier) then (yes)
+  :RunCarrier;
+elseif (RobotType=Launcher) then (yes)
+  :RunLauncher;
+elseif (RobotType=Amplifier) then (yes)
+  :RunAmplifier;
+elseif (RobotType=Booster) then (yes)
+  :RunBooster;
+elseif (RobotType=Destabilizer) then (yes)
+  :RunDestabilizer;
+else (nothing)
+  :Else;
+endif
+stop
+@enduml
+
+' allowmixing
+'  :checkRobotType:
+' @startuml RobotPlayer
+' !theme toy 
+' !pragma useVerticalIf on
+' start
+' if (RobotType=Headquarters) then (yes)
+'   :RunHeadquarters;
+' elseif (RobotType=Carrier) then (yes)
+'   :RunCarrier;
+'   stop
+' elseif (RobotType=Launcher) then (yes)
+'   :RunLauncher;
+' elseif (RobotType=Amplifier) then (yes)
+'   :RunAmplifier;
+' elseif (RobotType=Booster) then (yes)
+'   :RunBooster;
+' elseif (RobotType=Destabilizer) then (yes)
+'   :RunDestabilizer;
+' else (nothing)
+'   :Text else;
+' endif
+' stop
+' @enduml

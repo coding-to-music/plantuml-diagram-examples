@@ -1,0 +1,64 @@
+
+@startuml BigPicture-Sequence-Diagram
+
+skinparam SequenceGroupBodyBackgroundColor #FFFFFF90
+
+box "Robot Stratgies" #LightBlue
+    participant Headquarters
+    participant Carrier
+    participant Launcher
+    participant Amplifier
+    participant Booster
+    participant Destabilizer
+end box
+
+box "Game Objects" #LightGreen
+    participant Wells
+    participant Islands
+    participant Enemies
+end box
+
+box "Pathing" #YellowGreen
+    participant Pathing
+end box
+
+box "Communications" #APPLICATION
+    participant Communications
+end box
+
+box "Optimal" #LightSkyBlue
+    participant OptimalResource
+end box
+
+group Headquarters Services
+    Headquarters <--> Wells : ScanWells
+    Headquarters <--> Islands : ScanIslands
+    Headquarters <--> Enemies : ScanEnemies
+    Headquarters <--> Communications : tryWriteMessage
+end
+
+group Carrier Services
+    Carrier <--> Wells : ScanWells
+    Carrier <--> Islands : ScanIslands
+    Carrier <--> Enemies : ScanEnemies
+end
+
+group Carrier Pathing
+    Carrier <--> Pathing : moveTowards
+    Carrier <--> Pathing : intToLocation
+    Carrier <--> Pathing : locationToInt
+end
+
+group Launcher Services
+    Launcher <--> Wells : ScanWells
+    Launcher <--> Islands : ScanIslands
+    Launcher <--> Enemies : ScanEnemies
+end
+
+group Launcher Pathing
+    Launcher <--> Pathing : moveTowards
+    Launcher <--> Pathing : intToLocation
+    Launcher <--> Pathing : locationToInt
+end
+
+@enduml

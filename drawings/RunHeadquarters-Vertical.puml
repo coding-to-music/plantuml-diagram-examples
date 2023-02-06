@@ -1,0 +1,41 @@
+@startuml RunHeadquarters-Vertical
+
+title runHeadquarters
+!theme toy 
+!pragma useVerticalIf on
+
+  :Run Once per Turn for each Headquarters;
+start 
+if (TurnCount == 1) then (yes)
+  :Communication.addHeadquarters;
+else if (TurnCount == 2) then (yes)
+  :Communication.updateHeadquarters;
+else if (rc.canBuildAnchor) then (yes)
+  :rc.buildAnchor(STANDARD);
+else if (if rc.canBuildRobot(AMPLIFIER)) then (yes)
+  :rc.buildRobot(AMPLIFIER);
+else if (if rc.canBuildRobot(CARRIER)) then (yes)
+  :rc.buildRobot(CARRIER);
+else if (if rc.canBuildRobot(LAUNCHER)) then (yes)
+  :rc.buildRobot(LAUNCHER);
+else if (if rc.canBuildRobot(BOOSTER)) then (yes)
+  :rc.buildRobot(BOOSTER);
+else if (if rc.canBuildRobot(DESTABILISER)) then (yes)
+  :rc.buildRobot(DESTABILISER);
+else (nothing)
+endif
+stop
+@enduml
+
+' allowmixing
+'  :End Run Loop;
+' stop
+  ' -->[Ending process] (*)
+  ' --> "Another Action"
+  ' -right-> (*)
+' [component2]
+' () "interface2"
+' (usecase2)
+' () "Run Loop Begin"
+' :b:
+' "Run Loop Begin"

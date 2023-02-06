@@ -1,0 +1,3 @@
+@startuml sequence
+Alice -> Bob: test
+@enduml
