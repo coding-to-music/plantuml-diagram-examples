@@ -1,13 +1,13 @@
 @startuml "Headquarters-Strategy"
-(*) --> if "Some Test" then
+(*) --> if "turnCount == 1" then
 
-  -->[true] "action 1"
+  -->[true] "addHeadquarters"
 
-  if "" then
-    -> "action 3" as a3
+  if "turnCount == 2" then
+    -> "updateHeadquarters" as a3
   else
-    if "Other test" then
-      -left-> "action 5"
+    if "canCreateCarrier" then
+      -left-> "createRobot(CARRIER)"
     else
       --> "action 6"
     endif
@@ -25,3 +25,29 @@ else
   -> "action 8"
 endif
 @enduml
+
+' (*) --> if "turnCount == 1" then
+
+'   -->[true] "addHeadquarters"
+
+'   if "turnCount == 2" then
+'     -> "updateHeadquarters" as a3
+'   else
+'     if "canCreateCarrier" then
+'       -left-> "createRobot(CARRIER)"
+'     else
+'       --> "action 6"
+'     endif
+'   endif
+
+' else
+
+'   ->[false] "action 2"
+
+' endif
+
+' a3 --> if "last test" then
+'   --> "action 7"
+' else
+'   -> "action 8"
+' endif
