@@ -70,6 +70,119 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.351-b10, mixed mode)
 
 <!-- TOC -->
 
+- [plantuml-diagram-examples](#plantuml-diagram-examples)
+- [🚀 PlantUML Diagram Examples 🚀](#-plantuml-diagram-examples-)
+  - [Environment Values](#environment-values)
+  - [GitHub](#github)
+  - [Set up Java 8](#set-up-java-8)
+- [Table of Contents of this file](#table-of-contents-of-this-file)
+- [PlantUML Diagrams](#plantuml-diagrams)
+  - [Installing PlantUML](#installing-plantuml)
+  - [Generate .png files from the .puml source](#generate-png-files-from-the-puml-source)
+  - [PlantUML documentation and links](#plantuml-documentation-and-links)
+  - [Actor Component Interface UseCase](#actor-component-interface-usecase)
+    - [Create .png file of the overall system diagram](#create-png-file-of-the-overall-system-diagram)
+  - [Hello world for PlantUML](#hello-world-for-plantuml)
+  - [Use PlantUML's command line syntax to include it in your own scripts or documentation tools.](#use-plantumls-command-line-syntax-to-include-it-in-your-own-scripts-or-documentation-tools)
+- [Example Plant UML Diagrams](#example-plant-uml-diagrams)
+- [Mermaid Diagram Types](#mermaid-diagram-types)
+  - [Flowchart](#flowchart)
+  - [Sequence diagram](#sequence-diagram)
+  - [sequenceDiagram](#sequencediagram)
+  - [Gantt diagram#](#gantt-diagram)
+  - [Class Diagram](#class-diagram)
+  - [Git graph](#git-graph)
+  - [User Journey Diagram](#user-journey-diagram)
+  - [CarrierStrategy](#carrierstrategy)
+    - [Additional Carrier functions](#additional-carrier-functions)
+  - [Communications](#communications)
+    - [Communications functions - Being Called](#communications-functions---being-called)
+  - [LauncherStrategy](#launcherstrategy)
+  - [OptimalResource](#optimalresource)
+  - [Pathing](#pathing)
+- [src files needed and purpose](#src-files-needed-and-purpose)
+  - [Booster](#booster)
+  - [Destabilizer](#destabilizer)
+  - [Amplifier](#amplifier)
+- [Battlecode Video Lectures](#battlecode-video-lectures)
+  - [Robots - Overview](#robots---overview)
+- [Breakdown of content on videos](#breakdown-of-content-on-videos)
+- [Lecture 1 - Battlecode 2023 Kickoff](#lecture-1---battlecode-2023-kickoff)
+  - [Objective](#objective)
+  - [Map Elements](#map-elements)
+  - [Resources and Wells](#resources-and-wells)
+    - [Adamantium Ad - Wagon carrier with box](#adamantium-ad---wagon-carrier-with-box)
+    - [Mana Mn - Honey pot with slosh on right](#mana-mn---honey-pot-with-slosh-on-right)
+    - [Elixir Ex - Honey pot with slosh on left](#elixir-ex---honey-pot-with-slosh-on-left)
+  - [Robot Types](#robot-types)
+    - [Headquarters](#headquarters)
+    - [Carriers](#carriers)
+    - [Launchers](#launchers)
+    - [Amplifiers](#amplifiers)
+    - [Boosters](#boosters)
+    - [Destabilizers](#destabilizers)
+    - [Anchors](#anchors)
+- [Capabilities and Tasks](#capabilities-and-tasks)
+- [Lecture 2 - Battlecode 2023 Getting Started](#lecture-2---battlecode-2023-getting-started)
+  - [Install Java and Battlecode Scaffold](#install-java-and-battlecode-scaffold)
+  - [Java data types and value comparison](#java-data-types-and-value-comparison)
+  - [Using java functions from battlecode.common](#using-java-functions-from-battlecodecommon)
+  - [Coding summary: Logic for meeting another robot](#coding-summary-logic-for-meeting-another-robot)
+  - [Running robots in a game](#running-robots-in-a-game)
+    - [RobotPlayer](#robotplayer)
+    - [Headquarters](#headquarters)
+    - [Carriers](#carriers)
+    - [Launchers](#launchers)
+    - [Refactoring](#refactoring)
+  - [Modify Headquarters to be smarter](#modify-headquarters-to-be-smarter)
+- [Lecture 3 - Battlecode 2023 Intro to Git](#lecture-3---battlecode-2023-intro-to-git)
+- [Lecture 4 - Battlecode 2023 Intro to Bot Making](#lecture-4---battlecode-2023-intro-to-bot-making)
+  - [Splitting up into smaller files](#splitting-up-into-smaller-files)
+  - [Modify Carrier to store data / save state](#modify-carrier-to-store-data--save-state)
+- [Lecture 5 - Battlecode 2023 Communications and Pathfinding](#lecture-5---battlecode-2023-communications-and-pathfinding)
+  - [Communication Model](#communication-model)
+  - [Communications methods](#communications-methods)
+  - [Pathfinding](#pathfinding)
+- [Lecture 6 - Battlecode 2023 Macro Strategy / Balance Changes](#lecture-6---battlecode-2023-macro-strategy--balance-changes)
+- [Lecture T1 - Battlecode 2023 Sprint 1 Tournament](#lecture-t1---battlecode-2023-sprint-1-tournament)
+- [Lecture 7 - Battlecode 2023 Micro Strategy](#lecture-7---battlecode-2023-micro-strategy)
+  - [Headquarters considerations](#headquarters-considerations)
+  - [Carrier Considerations](#carrier-considerations)
+  - [Launcher Considerations](#launcher-considerations)
+  - [Follow the leader](#follow-the-leader)
+  - [Building 5 carriers at once](#building-5-carriers-at-once)
+  - [Don't have carriers be the leader](#dont-have-carriers-be-the-leader)
+  - [Building maps](#building-maps)
+- [Lecture 8 - Battlecode 2023 Bytecode Hacking & Optimization](#lecture-8---battlecode-2023-bytecode-hacking--optimization)
+- [Formal specification](#formal-specification)
+- [Background](#background)
+- [Objective](#objective)
+- [Map overview](#map-overview)
+  - [Passability](#passability)
+  - [Clouds and Currents](#clouds-and-currents)
+  - [Islands, Headquarters, and Wells](#islands-headquarters-and-wells)
+- [Resources](#resources)
+- [Robots](#robots)
+  - [Headquarters](#headquarters)
+  - [Carriers](#carriers)
+  - [Signal Amplifiers](#signal-amplifiers)
+  - [Launchers](#launchers)
+  - [Temporal Destabilizers](#temporal-destabilizers)
+  - [Temporal Boosters](#temporal-boosters)
+- [Reality Anchors](#reality-anchors)
+- [Communication](#communication)
+- [Sensing and Vision](#sensing-and-vision)
+- [Victory and Tiebreaks](#victory-and-tiebreaks)
+- [Actions and Cooldowns](#actions-and-cooldowns)
+- [Robots in-depth](#robots-in-depth)
+- [Bytecode Limits](#bytecode-limits)
+- [Appendix: Other resources and utilities](#appendix-other-resources-and-utilities)
+  - [**Sample player**](#sample-player)
+  - [**Debugging**](#debugging)
+  - [**Monitoring**](#monitoring)
+  - [**GameActionExceptions**](#gameactionexceptions)
+  - [**Complete documentation**](#complete-documentation)
+
 <!-- /TOC -->
 
 # PlantUML Diagrams
@@ -158,7 +271,8 @@ java -jar /usr/java/jdk1.8.0_361/jre/lib/ext/plantuml.jar BattleCode-2023-System
 ## Hello world for PlantUML
 
 ```plantuml
-@startuml
+
+ READMEuml
 Alice -> Bob: test
 @enduml
 ```
@@ -166,7 +280,7 @@ Alice -> Bob: test
 ```
 ⚠️No PlantUML server, specify one with "plantuml.server".
 
-@startuml
+ README-1l
 Alice -> Bob: test
 @enduml
 ```
@@ -176,7 +290,8 @@ Alice -> Bob: test
 - 1. Create a text file with PlantUML commands, like this example called sequenceDiagram.txt:
 
 ```
-@startuml
+
+ README-2l
 Alice -> Bob: test
 @enduml
 ```
@@ -195,6 +310,8 @@ java -jar plantuml.jar -verbose sequenceDiagram.txt
 This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 # Example Plant UML Diagrams
+
+![cases-vs-deaths-August-2021](https://github.com/coding-to-music/coding-to-music.github.io/blob/master/docs/source/assets/Vaccines/Death-Rates/2021-08-03-USA-covid-cases-vs-deaths-per-day.jpg?raw=true)
 
 'BattleCode 2023 System Diagram.png'  
 Headquarters-Strategy.png  

@@ -1,12 +1,21 @@
 {
   "name": "plantuml-diagram-examples",
   "version": "1.0.0",
-  "description": "This is the Battlecode 2023 scaffold, containing an `examplefuncsplayer`. Read https://play.battlecode.org/bc23/getting-started!",
+  "description": "plantuml-diagram-examples started specifically for the Battlecode 2023 scaffold, containing an `examplefuncsplayer`. Read https://play.battlecode.org/bc23/getting-started!",
   "main": "index.js",
   "scripts": {
+    "deploy": "git add . && git commit -m Build && git push",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coding-to-music/plantuml-diagram-examples.git"
+  },
+  "bugs": {
+    "url": "https://github.com/coding-to-music/plantuml-diagram-examples/issues"
+  },
+  "homepage": "https://github.com/coding-to-music/plantuml-diagram-examples#readme"
 }
