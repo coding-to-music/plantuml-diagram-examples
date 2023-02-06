@@ -313,16 +313,132 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ![cases-vs-deaths-August-2021](https://github.com/coding-to-music/coding-to-music.github.io/blob/master/docs/source/assets/Vaccines/Death-Rates/2021-08-03-USA-covid-cases-vs-deaths-per-day.jpg?raw=true)
 
-'BattleCode 2023 System Diagram.png'  
-Headquarters-Strategy.png  
-RobotPlayer.png  
-'runHeadquarters Swim Lanes.png'  
-'swim lanes.png'
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/BattleCode-2023-System-Diagram.png?raw=true)
 
-BigPicture-Sequence-Diagram.png  
-'RobotPlayer Horizontal.png'  
-'RobotPlayer Vertical.png'  
-'RunHeadquarters Vertical.png'
+BattleCode-2023-System-Diagram.png
+![BattleCode-2023-System-Diagram.png](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/BattleCode-2023-System-Diagram.png?raw=true)
+
+BigPicture-Sequence-Diagram.png
+![BigPicture-Sequence-Diagram.png](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/BigPicture-Sequence-Diagram.png?raw=true)
+
+Headquarters-Strategy.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/Headquarters-Strategy.png?raw=true)
+
+RobotPlayer-Horizontal.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/RobotPlayer-Horizontal.png?raw=true)
+
+RobotPlayer.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/RobotPlayer.png?raw=true)
+
+RobotPlayer-Vertical.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/XXXXXX?raw=true)
+
+RunHeadquarters-SwimLanes.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/XXXXXX?raw=true)
+
+RunHeadquarters-Vertical.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/XXXXXX?raw=true)
+
+swim-lanes.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/XXXXXX?raw=true)
+
+1activity-branches.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1activity-variables-loops.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1archimate.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1branches-if-nested.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1components-groups-databases.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1components-json-data.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1creole-salt-fonts-effects.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1deployment-elements.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1devto-c4-classy-objects.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1long-text-action.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1mindmap-colors.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1mindmap-header-footer.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1parallel-synchronization.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1several-tests-horizontal.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1several-tests-vertical.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1swim-lanes-activity-diagram-beta.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1while-loop-variables.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+1-work-breakdown-structure-wbs.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+another-gantt.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+autonumber-sequence-formatted.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+autonumber-sequence.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+classes-person-pet.png
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+### colors-example.png
+
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+### colors-heatmap.png
+
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+### colors.png
+
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+### example.png
+
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+### foo.png
+
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+### sequenceDiagram.png
+
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+### sequence.png
+
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
+
+### vertical.png
+
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/XXXXXX?raw=true)
 
 Examples
 
