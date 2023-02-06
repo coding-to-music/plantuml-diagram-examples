@@ -86,6 +86,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.351-b10, mixed mode)
   - [Use PlantUML's command line syntax to include it in your own scripts or documentation tools.](#use-plantumls-command-line-syntax-to-include-it-in-your-own-scripts-or-documentation-tools)
 - [Example Plant UML Diagrams](#example-plant-uml-diagrams) - [BattleCode-2023-System-Diagram.png](#battlecode-2023-system-diagrampng) - [BattleCode-2023-System-Diagram.png](#battlecode-2023-system-diagrampng) - [BigPicture-Sequence-Diagram.png](#bigpicture-sequence-diagrampng) - [Headquarters-Strategy.png](#headquarters-strategypng) - [RobotPlayer-Horizontal.png](#robotplayer-horizontalpng) - [RobotPlayer.png](#robotplayerpng) - [RobotPlayer-Vertical.png](#robotplayer-verticalpng) - [RunHeadquarters-SwimLanes.png](#runheadquarters-swimlanespng) - [RunHeadquarters-Vertical.png](#runheadquarters-verticalpng) - [swim-lanes.png](#swim-lanespng)
   - [Generic PlantUML Examples](#generic-plantuml-examples)
+    - [mixing-all-elements.png](#mixing-all-elementspng)
+    - [sterotype-with-style-on-all-element.png](#sterotype-with-style-on-all-elementpng)
     - [activity-branches.png](#activity-branchespng)
     - [activity-variables-loops.png](#activity-variables-loopspng)
     - [archimate.png](#archimatepng)
@@ -383,6 +385,14 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/swim-lanes.png?raw=true)
 
 ## Generic PlantUML Examples
+
+### 1mixing-all-elements.png
+
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/1mixing-all-elements.png?raw=true)
+
+### 1sterotype-with-style-on-all-element.png
+
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/1sterotype-with-style-on-all-element.png?raw=true)
 
 ### 1activity-branches.png
 
