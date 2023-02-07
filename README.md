@@ -241,7 +241,7 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ### RobotPlayer-Vertical.png
 
-[Link to source file: RobotPlayer.puml](drawings/RobotPlayer.puml)
+[Link to source file: RobotPlayer-Vertical.puml](drawings/RobotPlayer-Vertical.puml)
 
 ![](/drawings/RobotPlayer-Vertical.png?raw=true)
 
