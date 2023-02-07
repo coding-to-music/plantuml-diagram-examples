@@ -209,6 +209,10 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/Headquarters-Strategy.png?raw=true)
 
+### Headquarters-Strategy-proposed.png
+
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/Headquarters-Strategy-proposed.png?raw=true)
+
 ### RobotPlayer-Horizontal.png
 
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/RobotPlayer-Horizontal.png?raw=true)
