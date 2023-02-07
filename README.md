@@ -411,19 +411,19 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ### colors-heatmap.png
 
-[Link to source file: colors.puml](drawings/examples/colors.puml)
+[DOES NOT EXIST Link to source file: colors.puml](drawings/examples/colors.puml)
 
 ![](/drawings/examples/colors-heatmap.png?raw=true)
 
 ### colors.png
 
-[Link to source file: XXXXX.puml](drawings/examples/colors.puml)
+[DOES NOT EXIST Link to source file: colors.puml](drawings/examples/colors.puml)
 
 ![](/drawings/examples/colors.png?raw=true)
 
 ### example.png
 
-[Link to source file: example.puml](drawings/examples/example.puml)
+[DOES NOT EXIST Link to source file: example.puml](drawings/examples/example.puml)
 
 ![](/drawings/examples/example.png?raw=true)
 
@@ -453,7 +453,7 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ### sequence.png
 
-[Link to source file: sequence.puml](drawings/examples/sequence.puml)
+[DOES NOT EXIST Link to source file: sequence.puml](drawings/examples/sequence.puml)
 
 ![](/drawings/examples/sequence.png?raw=true)
 
