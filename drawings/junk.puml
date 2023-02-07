@@ -1,0 +1,34 @@
+@startuml
+' allowmixing
+start
+- "do something"
+while ("numFleetAmplifiersBuilt != 2")
+    :Build Amplifier;
+endwhile  
+- "do something too"
+while ("numFleetAmplifiersBuilt != 2")
+    :read data;
+endwhile  
+' -[hidden]->
+' detach
+
+- "do something else"
+
+- "do another"
+
+' -[hidden]->
+' detach
+
+' if "canCreateAmplifier" then
+'     -left->[true] "createRobot(AMPLIFIER)"
+' endif
+
+- "and another"
+
+' if "canCreateAmplifier" then
+' -left->[true] "createRobot(AMPLIFIER)"
+' endif
+
+stop
+
+@enduml

@@ -12,28 +12,32 @@ else
     if "canBuildAnchor" then
       -left->[true] "buildAnchor(STANDARD)"
     else
+      ' while ("numFleetAmplifiersBuilt != 2")
+          ' while ("canCreateAmplifier") 
+            ' :Build Amplifier;            
+          ' endwhile  
+      ' endwhile  
+      ' detach
       if "canCreateCarrier" then
         -left->[true] "createRobot(CARRIER)"
       else
         if "canCreateLauncher" then
           -left->[true] "createRobot(LAUNCHER)"
         else
-          if "canCreateAmplifier" then
-            -left->[true] "createRobot(AMPLIFIER)"
+          if "canCreateBooster" then
+            -left->[true] "createRobot(BOOSTER)"
           else
-            if "canCreateBooster" then
-              -left->[true] "createRobot(BOOSTER)"
+            if "canCreateDestabilizer" then
+              -left->[true] "createRobot(DESTABILIZER)"
             else
-              if "canCreateDestabilizer" then
-                -left->[true] "createRobot(DESTABILIZER)"
-              else
-                -->[true] "yield (end turn)"
-              endif
+              -->[true] "yield (end turn)"
             endif
+          endif
         endif
       endif
     endif
   endif
+endif
 
 
 ' <style>
@@ -47,7 +51,6 @@ else
 
 '   ->[false] "action 2"
 
-endif
 
 ' a3 --> if "last test" then
 '   --> "action 7"

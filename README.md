@@ -351,6 +351,10 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/example.png?raw=true)
 
+### goto-activities-merge.png
+
+![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/goto-activities-merge.png?raw=true)
+
 ### shaded-group-backgrounds.png
 
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/shaded-group-backgrounds.png?raw=true)
