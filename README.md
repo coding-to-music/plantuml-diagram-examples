@@ -257,12 +257,6 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ![](/drawings/RunHeadquarters-Vertical.png?raw=true)
 
-### swim-lanes.png
-
-[Link to source file: swim-lanes.puml](drawings/swim-lanes.puml)
-
-![](/drawings/swim-lanes.png?raw=true)
-
 ## Generic PlantUML Examples
 
 ### 1mixing-all-elements.png
