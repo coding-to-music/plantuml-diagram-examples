@@ -1,8 +1,9 @@
 @startuml "Headquarters-Strategy"
+
+!theme toy 
+
 (*) --> if "turnCount == 1" then
-
   -->[true] "addHeadquarters" as a1
-
 else
   if "turnCount == 2" then
     -->[true] "updateHeadquarters" as a3
@@ -19,7 +20,11 @@ else
           if "canCreateBooster" then
             -left->[true] "createRobot(BOOSTER)"
           else
-            -->[true] "action 6"
+            if "canCreateBooster" then
+              -left->[true] "createRobot(DESTABILIZER)"
+            else
+              -->[true] "yield (end turn)"
+            endif
           endif
       endif
     endif
