@@ -205,41 +205,61 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ### BigPicture-Sequence-Diagram.png
 
+[Link to source file: BigPicture-Sequence-Diagram.puml](drawings/BigPicture-Sequence-Diagram.puml)
+
 ![BigPicture-Sequence-Diagram.png](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/BigPicture-Sequence-Diagram.png?raw=true)
 
 ### Headquarters-Strategy.png
+
+[Link to source file: Headquarters-Strategy.puml](drawings/Headquarters-Strategy.puml)
 
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/Headquarters-Strategy.png?raw=true)
 
 ### Headquarters-Strategy-proposed.png
 
+[Link to source file: Headquarters-Strategy-proposed.puml](drawings/Headquarters-Strategy-proposed.puml)
+
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/Headquarters-Strategy-proposed.png?raw=true)
 
 ### Headquarters-Strategy-proposed-2.png
+
+[Link to source file: Headquarters-Strategy-proposed-2.puml](drawings/Headquarters-Strategy-proposed-2.puml)
 
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/Headquarters-Strategy-proposed-2.png?raw=true)
 
 ### RobotPlayer-Horizontal.png
 
+[Link to source file: RobotPlayer-Horizontal.puml](drawings/RobotPlayer-Horizontal.puml)
+
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/RobotPlayer-Horizontal.png?raw=true)
 
 ### RobotPlayer.png
+
+[Link to source file: RobotPlayer.puml](drawings/RobotPlayer.puml)
 
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/RobotPlayer.png?raw=true)
 
 ### RobotPlayer-Vertical.png
 
+[Link to source file: RobotPlayer.puml](drawings/RobotPlayer.puml)
+
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/RobotPlayer-Vertical.png?raw=true)
 
 ### RunHeadquarters-SwimLanes.png
+
+[Link to source file: RunHeadquarters-SwimLanes.puml](drawings/RunHeadquarters-SwimLanes.puml)
 
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/RunHeadquarters-SwimLanes.png?raw=true)
 
 ### RunHeadquarters-Vertical.png
 
+[Link to source file: RunHeadquarters-Vertical.puml](drawings/RunHeadquarters-Vertical.puml)
+
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/RunHeadquarters-Vertical.png?raw=true)
 
 ### swim-lanes.png
+
+[Link to source file: swim-lanes.puml](drawings/swim-lanes.puml)
 
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/swim-lanes.png?raw=true)
 
@@ -247,9 +267,13 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ### 1mixing-all-elements.png
 
+[Link to source file: 1mixing-all-elements.puml](drawings/examples/1mixing-all-elements.puml)
+
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/1mixing-all-elements.png?raw=true)
 
 ### 1sterotype-with-style-on-all-element.png
+
+[Link to source file: XXXXX.puml](drawings/XXXXX.puml)
 
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/examples/1sterotype-with-style-on-all-element.png?raw=true)
 
