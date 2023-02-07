@@ -381,7 +381,7 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ### another-gantt.png
 
-[Link to source file: another-gantt.puml](drawings/examples/another-gantt.puml)
+[DOES NOT EXIST Link to source file: another-gantt.puml](drawings/examples/another-gantt.puml)
 
 ![](/drawings/examples/another-gantt.png?raw=true)
 
