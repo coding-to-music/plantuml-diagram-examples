@@ -199,6 +199,8 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ### BattleCode-2023-System-Diagram.png
 
+[Link to source file: BattleCode-2023-System-Diagram.puml](drawings/BattleCode-2023-System-Diagram.puml)
+
 ![](https://github.com/coding-to-music/plantuml-diagram-examples/blob/main/drawings/BattleCode-2023-System-Diagram.png?raw=true)
 
 ### BigPicture-Sequence-Diagram.png
