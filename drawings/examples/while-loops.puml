@@ -1,4 +1,4 @@
-@startuml
+@startuml while-loops
 ' allowmixing
 start
 - "do something"

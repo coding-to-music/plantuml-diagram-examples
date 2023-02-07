@@ -1,4 +1,4 @@
-@startuml
+@startuml goto-activities-merge
 title Point two queries to same activity\nwith `goto`
 start
 if (Test Question?) then (yes)

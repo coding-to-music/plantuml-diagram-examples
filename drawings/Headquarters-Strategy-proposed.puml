@@ -1,8 +1,31 @@
 @startuml "Headquarters-Strategy-proposed"
+title Headquarters-Strategy-proposed
+
+' allowmixing;
 
 !theme toy 
 
 (*) --> "generateRandomDirection"
+
+' if (Test Question?) then (yes)
+' 'space label only for alignment
+' label sp_lab0
+' label sp_lab1
+' 'real label
+' label lab
+' :shared;
+' else (no)
+' if (Second Test Question?) then (yes)
+' label sp_lab2
+' goto sp_lab1
+' else
+' :nonShared;
+' endif
+' endif
+' :merge;
+
+--> "placeholder"
+
 if "turnCount == 1" then
   -->[true] "addHeadquarters" as a1
 else
