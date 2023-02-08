@@ -1,0 +1,139 @@
+@startuml Headquarters-Strategy-proposed-4b
+!theme toy 
+title Headquarters-Strategy-proposed-4b
+start
+
+:From part1; 
+
+if (if canCreateCarrier) then (true) 
+:buildRobot(CARRIER); 
+else (no)
+endif
+if (if canCreateLauncher) then (true) 
+:buildRobot(LAUNCHER); 
+else (no)
+endif
+if (if canCreateBooster) then (true) 
+:buildRobot(BOOSTER); 
+else (no)
+endif
+if (if canCreateDestabilizer) then (true) 
+:buildRobot(DESTABILIZER); 
+else (no)
+endif
+
+:Continue to part3; 
+stop
+@enduml
+
+'       if "canCreateCarrier" then
+'         -left->[true] "createRobot(CARRIER)"
+'       else
+'         if "canCreateLauncher" then
+'           -left->[true] "createRobot(LAUNCHER)"
+'         else
+'           if "canCreateBooster" then
+'             -left->[true] "createRobot(BOOSTER)"
+'           else
+'             if "canCreateDestabilizer" then
+'               -left->[true] "createRobot(DESTABILIZER)"
+'             else
+'               -->[true] "yield (end turn)"
+'             endif
+'           endif
+'         endif
+'       endif
+'     endif
+'   endif
+' endif
+
+' :new page;
+' if (Page.onSecurityCheck) then (true)
+'   :Page.onInit();
+'   if (isForward?) then (no)
+'     :Process controls;
+'     if (continue processing?) then (no)
+'       stop
+'     endif
+
+'     if (isPost?) then (yes)
+'       :Page.onPost();
+'     else (no)
+'       :Page.onGet();
+'     endif
+'     :Page.onRender();
+'   endif
+' else (false)
+' endif
+
+' if (do redirect?) then (yes)
+'   :redirect process;
+' else
+'   if (do forward?) then (yes)
+'     :Forward request;
+'   else (no)
+'     :Render page template;
+'   endif
+' endif
+
+' stop
+' @enduml
+
+' goto lab
+
+' --> "placeholder"
+
+' if "turnCount == 1" then
+'   -->[true] "addHeadquarters" as a1
+' else
+'   if "turnCount == 2" then
+'     -->[true] "updateHeadquarters" as a3
+'   else
+'     if "canBuildAnchor" then
+'       -left->[true] "buildAnchor(STANDARD)"
+'     else
+'       ' while ("numFleetAmplifiersBuilt != 2")
+'           ' while ("canCreateAmplifier") 
+'             ' :Build Amplifier;            
+'           ' endwhile  
+'       ' endwhile  
+'       ' detach
+'       if "canCreateCarrier" then
+'         -left->[true] "createRobot(CARRIER)"
+'       else
+'         if "canCreateLauncher" then
+'           -left->[true] "createRobot(LAUNCHER)"
+'         else
+'           if "canCreateBooster" then
+'             -left->[true] "createRobot(BOOSTER)"
+'           else
+'             if "canCreateDestabilizer" then
+'               -left->[true] "createRobot(DESTABILIZER)"
+'             else
+'               -->[true] "yield (end turn)"
+'             endif
+'           endif
+'         endif
+'       endif
+'     endif
+'   endif
+' endif
+
+' :HQ & every robot is called every turn;
+' if (if turnCount == 1) then (true) 
+' :addHeadquarters; 
+' else (no)
+' endif
+' if (if turnCount == 2) then (true) 
+' :updateHeadquarters; 
+' else (no)
+' endif
+' if (if canBuildAnchor) then (true) 
+' :buildAnchor(STANDARD); 
+' else (no)
+' endif
+' while ("if numFleetAmplifiersBuilt != 2")
+'     while ("if canCreateAmplifier") 
+'       :Build Amplifier;            
+'     endwhile  
+' endwhile  
