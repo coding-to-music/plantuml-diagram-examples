@@ -1,7 +1,10 @@
 @startuml Headquarters-Strategy-proposed-2
+!theme toy 
 title Headquarters-Strategy-proposed-2
+
 start
 if (turnCount==1?) then (yes)
+:addHeadquarters;
 'space label only for alignment
 label sp_lab0
 label sp_lab1
@@ -10,11 +13,15 @@ label lab
 :shared;
 else (no)
 if (turnCount==2?) then (yes)
+:updateHeadquarters;
 label sp_lab2
 goto sp_lab1
 else
-:nonShared;
+:Otherwise;
 endif
 endif
 :merge;
 @enduml
+
+
+' goto lab
