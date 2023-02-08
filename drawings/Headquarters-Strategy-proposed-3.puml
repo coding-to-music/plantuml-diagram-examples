@@ -1,8 +1,63 @@
 @startuml Headquarters-Strategy-proposed-3
-!theme toy 
+' !theme toy 
 title Headquarters-Strategy-proposed-3
 start
-:ClickServlet.handleRequest();
+:HQ & every robot is called every turn;
+if (if turnCount == 1) then (true) 
+:addHeadquarters; 
+else (no)
+endif
+if (if turnCount == 2) then (true) 
+:updateHeadquarters; 
+else (no)
+endif
+if (if canBuildAnchor) then (true) 
+:buildAnchor(STANDARD); 
+else (no)
+endif
+while ("if numFleetAmplifiersBuilt != 2")
+    while ("if canCreateAmplifier") 
+      :Build Amplifier;            
+    endwhile  
+endwhile  
+if (if canCreateCarrier) then (true) 
+:buildRobot(CARRIER); 
+else (no)
+endif
+if (if canCreateLauncher) then (true) 
+:buildRobot(LAUNCHER); 
+else (no)
+endif
+if (if canCreateBooster) then (true) 
+:buildRobot(BOOSTER); 
+else (no)
+endif
+if (if canCreateDestabilizer) then (true) 
+:buildRobot(DESTABILIZER); 
+else (no)
+endif
+
+'       if "canCreateCarrier" then
+'         -left->[true] "createRobot(CARRIER)"
+'       else
+'         if "canCreateLauncher" then
+'           -left->[true] "createRobot(LAUNCHER)"
+'         else
+'           if "canCreateBooster" then
+'             -left->[true] "createRobot(BOOSTER)"
+'           else
+'             if "canCreateDestabilizer" then
+'               -left->[true] "createRobot(DESTABILIZER)"
+'             else
+'               -->[true] "yield (end turn)"
+'             endif
+'           endif
+'         endif
+'       endif
+'     endif
+'   endif
+' endif
+
 :new page;
 if (Page.onSecurityCheck) then (true)
   :Page.onInit();
