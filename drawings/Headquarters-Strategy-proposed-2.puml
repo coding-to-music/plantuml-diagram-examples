@@ -10,18 +10,71 @@ label sp_lab0
 label sp_lab1
 'real label
 label lab
-:shared;
+:resume regular flow;
 else (no)
 if (turnCount==2?) then (yes)
 :updateHeadquarters;
 label sp_lab2
 goto sp_lab1
-else
-:Otherwise;
+else (no)
+:Normally;
 endif
 endif
 :merge;
+:Otherwise;
+' if "canBuildAnchor" then -left->[true] "buildAnchor(STANDARD)";
+:Otherwise2;
+if (canBuildAmplifier?) then (yes)
+:buildRobot(AMPLIFIER);
+:Otherwise3;
+    while ("numFleetAmplifiersBuilt != 2")
+        while ("canCreateAmplifier") 
+        :Build Amplifier;            
+        endwhile  
+    endwhile  
+    detach
+:Otherwise4;
+
+stop
 @enduml
 
 
 ' goto lab
+
+' --> "placeholder"
+
+' if "turnCount == 1" then
+'   -->[true] "addHeadquarters" as a1
+' else
+'   if "turnCount == 2" then
+'     -->[true] "updateHeadquarters" as a3
+'   else
+'     if "canBuildAnchor" then
+'       -left->[true] "buildAnchor(STANDARD)"
+'     else
+'       ' while ("numFleetAmplifiersBuilt != 2")
+'           ' while ("canCreateAmplifier") 
+'             ' :Build Amplifier;            
+'           ' endwhile  
+'       ' endwhile  
+'       ' detach
+'       if "canCreateCarrier" then
+'         -left->[true] "createRobot(CARRIER)"
+'       else
+'         if "canCreateLauncher" then
+'           -left->[true] "createRobot(LAUNCHER)"
+'         else
+'           if "canCreateBooster" then
+'             -left->[true] "createRobot(BOOSTER)"
+'           else
+'             if "canCreateDestabilizer" then
+'               -left->[true] "createRobot(DESTABILIZER)"
+'             else
+'               -->[true] "yield (end turn)"
+'             endif
+'           endif
+'         endif
+'       endif
+'     endif
+'   endif
+' endif
