@@ -8,6 +8,7 @@ if (turnCount==1?) then (yes)
 'space label only for alignment
 label sp_lab0
 label sp_lab1
+label sp_continue
 'real label
 label lab
 :resume regular flow;
@@ -20,12 +21,15 @@ else (no)
 :Normally;
 endif
 endif
-:merge;
-:Otherwise;
+label sp_continue
+:continue;
+' :Otherwise;
 ' if "canBuildAnchor" then -left->[true] "buildAnchor(STANDARD)";
-:Otherwise2;
+' :Otherwise2;
 if (canBuildAmplifier?) then (yes)
-:buildRobot(AMPLIFIER);
+:buildRobot(AMPLIFIER); 
+' goto sp_continue
+detach
 :Otherwise3;
     while ("numFleetAmplifiersBuilt != 2")
         while ("canCreateAmplifier") 

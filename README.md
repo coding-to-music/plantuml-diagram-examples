@@ -261,6 +261,18 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ## Generic PlantUML Examples
 
+### 1activity-new-complete-example.png
+
+[Link to source file: 1activity-new-complete-example.puml](drawings/examples/1activity-new-complete-example.puml)
+
+![](/drawings/examples/1activity-new-complete-example?raw=true)
+
+### 1activity-legacy-complete-example.png
+
+[Link to source file: 1activity-legacy-complete-example.puml](drawings/examples/1activity-legacy-complete-example.puml)
+
+![](/drawings/examples/1activity-legacy-complete-example?raw=true)
+
 ### 1mixing-all-elements.png
 
 [Link to source file: 1mixing-all-elements.puml](drawings/examples/1mixing-all-elements.puml)
