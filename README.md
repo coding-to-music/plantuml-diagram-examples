@@ -415,11 +415,11 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ![](/drawings/examples/colors-heatmap.png?raw=true)
 
-### colors.png
+### color-heatmap-plant-uml.png
 
-[DOES NOT EXIST Link to source file: colors.puml](drawings/examples/colors.puml)
+[DOES NOT EXIST Link to source file: colors.puml](drawings/examples/color-heatmap-plant-uml.puml)
 
-![](/drawings/examples/colors.png?raw=true)
+![](/drawings/examples/color-heatmap-plant-uml.png?raw=true)
 
 ### example.png
 
