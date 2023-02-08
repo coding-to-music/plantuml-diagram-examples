@@ -229,6 +229,12 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ![](/drawings/Headquarters-Strategy-proposed-2.png?raw=true)
 
+### Headquarters-Strategy-proposed-3.png
+
+[Link to source file: Headquarters-Strategy-proposed-3.puml](drawings/Headquarters-Strategy-proposed-3.puml)
+
+![](/drawings/Headquarters-Strategy-proposed-3.png?raw=true)
+
 ### RobotPlayer-Horizontal.png
 
 [Link to source file: RobotPlayer-Horizontal.puml](drawings/RobotPlayer-Horizontal.puml)
@@ -265,13 +271,13 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 [Link to source file: 1activity-new-complete-example.puml](drawings/examples/1activity-new-complete-example.puml)
 
-![](/drawings/examples/1activity-new-complete-example?raw=true)
+![](/drawings/examples/1activity-new-complete-example.png?raw=true)
 
 ### 1activity-legacy-complete-example.png
 
 [Link to source file: 1activity-legacy-complete-example.puml](drawings/examples/1activity-legacy-complete-example.puml)
 
-![](/drawings/examples/1activity-legacy-complete-example?raw=true)
+![](/drawings/examples/1activity-legacy-complete-example.png?raw=true)
 
 ### 1mixing-all-elements.png
 
