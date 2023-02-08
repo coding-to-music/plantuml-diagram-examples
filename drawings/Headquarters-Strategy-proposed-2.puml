@@ -3,6 +3,7 @@
 title Headquarters-Strategy-proposed-2
 
 start
+
 if (turnCount==1?) then (yes)
 :addHeadquarters;
 'space label only for alignment
