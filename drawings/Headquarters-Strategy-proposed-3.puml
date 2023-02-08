@@ -1,5 +1,5 @@
 @startuml Headquarters-Strategy-proposed-3
-' !theme toy 
+!theme toy 
 title Headquarters-Strategy-proposed-3
 start
 :HQ & every robot is called every turn;
@@ -37,6 +37,9 @@ if (if canCreateDestabilizer) then (true)
 else (no)
 endif
 
+stop
+@enduml
+
 '       if "canCreateCarrier" then
 '         -left->[true] "createRobot(CARRIER)"
 '       else
@@ -58,37 +61,37 @@ endif
 '   endif
 ' endif
 
-:new page;
-if (Page.onSecurityCheck) then (true)
-  :Page.onInit();
-  if (isForward?) then (no)
-    :Process controls;
-    if (continue processing?) then (no)
-      stop
-    endif
+' :new page;
+' if (Page.onSecurityCheck) then (true)
+'   :Page.onInit();
+'   if (isForward?) then (no)
+'     :Process controls;
+'     if (continue processing?) then (no)
+'       stop
+'     endif
 
-    if (isPost?) then (yes)
-      :Page.onPost();
-    else (no)
-      :Page.onGet();
-    endif
-    :Page.onRender();
-  endif
-else (false)
-endif
+'     if (isPost?) then (yes)
+'       :Page.onPost();
+'     else (no)
+'       :Page.onGet();
+'     endif
+'     :Page.onRender();
+'   endif
+' else (false)
+' endif
 
-if (do redirect?) then (yes)
-  :redirect process;
-else
-  if (do forward?) then (yes)
-    :Forward request;
-  else (no)
-    :Render page template;
-  endif
-endif
+' if (do redirect?) then (yes)
+'   :redirect process;
+' else
+'   if (do forward?) then (yes)
+'     :Forward request;
+'   else (no)
+'     :Render page template;
+'   endif
+' endif
 
-stop
-@enduml
+' stop
+' @enduml
 
 ' goto lab
 
