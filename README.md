@@ -223,11 +223,11 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ![](/drawings/Headquarters-Strategy-proposed.png?raw=true)
 
-### Headquarters-Strategy-proposed-2.png
+### Headquarters-Strategy-proposed-2a.png
 
-[Link to source file: Headquarters-Strategy-proposed-2.puml](drawings/Headquarters-Strategy-proposed-2.puml)
+[Link to source file: Headquarters-Strategy-proposed-2a.puml](drawings/Headquarters-Strategy-proposed-2a.puml)
 
-![](/drawings/Headquarters-Strategy-proposed-2.png?raw=true)
+![](/drawings/Headquarters-Strategy-proposed-2a.png?raw=true)
 
 ### Headquarters-Strategy-proposed-3.png
 
