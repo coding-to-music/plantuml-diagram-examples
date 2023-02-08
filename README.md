@@ -128,6 +128,8 @@ https://github.com/plantuml/plantuml-stdlib
 
 https://the-lum.github.io/puml-themes-gallery/
 
+https://github.com/The-Lum/puml-themes-gallery/tree/main/input
+
 https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml
 
 https://github.com/qjebbs/vscode-plantuml
@@ -417,7 +419,9 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ### color-heatmap-plant-uml.png
 
-[Link to source file: color-heatmap-plant-uml.puml](drawings/examples/color-heatmap-plant-uml.puml)
+https://plantuml-documentation.readthedocs.io/en/latest/formatting/color-names.html
+
+[DOES NOT EXIST: Link to source file: color-heatmap-plant-uml.puml](drawings/examples/color-heatmap-plant-uml.puml)
 
 ![](/drawings/examples/color-heatmap-plant-uml.png?raw=true)
 
