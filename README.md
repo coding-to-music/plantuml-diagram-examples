@@ -417,7 +417,7 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ### color-heatmap-plant-uml.png
 
-[DOES NOT EXIST Link to source file: colors.puml](drawings/examples/color-heatmap-plant-uml.puml)
+[Link to source file: color-heatmap-plant-uml.puml](drawings/examples/color-heatmap-plant-uml.puml)
 
 ![](/drawings/examples/color-heatmap-plant-uml.png?raw=true)
 
