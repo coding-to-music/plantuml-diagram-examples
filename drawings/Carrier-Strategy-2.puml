@@ -1,6 +1,6 @@
-@startuml Carrier-Strategy-2
+@startuml Carrier-Strategy-2a
 !theme toy 
-title Carrier-Strategy-2
+title Carrier-Strategy-2a
 start
 
 :from part1; 
@@ -43,6 +43,23 @@ if (if haveAnchor==true) then (true)
     endif
 else (false)
     :no anchor;
+    :look for wells;
+    if (if wellLoc == null) then (true) 
+        :we don't know of any wells; 
+        :moveRandomly;
+    else (no)
+        if (if not isAdjacent(wellLoc)) then (true) 
+            :move closer to well; 
+            :moveTowards(wellLoc);
+        else (no)
+        endif
+    endif
+
+    if (if areAtCapacity == true) then (true) 
+        :head back to HQ; 
+        :moveTowards(hqLoc);
+    else (no)
+    endif
 endif 
 :Communication.tryWriteMessages(rc);
 :Continue to part3; 
