@@ -7,31 +7,55 @@ start
 
 if (if canTakeAnchor(STANDARD)==true) then (true) 
     :takeAnchor(hqLoc,STANDARD); 
-    :anchorMode=true;
+    :set haveAnchor=true;
 else (no)
 endif
 
-if (if anchorMode==true) then (true) 
-    :takeAnchor(hqLoc,STANDARD); 
-    :anchorMode=true;
-else (no)
-    if(if islandLoc == null) then (true)
-    :find available island;
-    while (loop thru island array)
-        :find any available island;
-        :break;
-    endwhile  
-    if(if islandLoc is still null) then (true)
-    :there are no available islands;
+if (if haveAnchor==true) then (true) 
+    :have anchor;
+    if(if islandLoc == null 1) then (true)
+        :we don't have an island yet;
+        while (loop thru island array)
+            :find any available island;
+            :break;
+        endwhile  
+        if(if islandLoc is null 2) then (true)
+            :there are no available islands;
+            :have anchor but no known islands;
+        else (false)
+            :found an island;
+            :RobotPlayer.moveTowards(rc, islandLoc);
+            if (if canPlaceAnchor(STANDARD)==true) then (true) 
+                :placeAnchor(hqLoc,STANDARD); 
+                :set anchorMode=false;
+            else (no)
+                :can't place anchor yet;
+            endif
+        endif
     else (no)
-    :found an island;
+        :have an island location;
+        :RobotPlayer.moveTowards(rc, islandLoc);
+        if (if canPlaceAnchor(STANDARD)==true) then (true) 
+            :placeAnchor(hqLoc,STANDARD); 
+            :set anchorMode=false;
+        else (no)
+        endif
     endif
-endif
-
+else (false)
+    :no anchor;
+endif 
+:Communication.tryWriteMessages(rc);
 :Continue to part3; 
 stop
 @enduml
 
+' else (no)
+'     :RobotPlayer.moveTowards(rc, islandLoc);
+'     if (if canPlaceAnchor(STANDARD)==true) then (true) 
+'         :placeAnchor(hqLoc,STANDARD); 
+'         :set anchorMode=false;
+'     else (no)
+'     endif
 
 ' goto lab
 
