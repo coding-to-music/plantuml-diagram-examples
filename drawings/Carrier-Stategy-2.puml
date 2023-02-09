@@ -5,98 +5,26 @@ start
 
 :from part1; 
 
-if (if turnCount == 2) then (true) 
-:updateHeadquartersInfo(rc); 
+if (if anchorMode==true) then (true) 
+    :takeAnchor(hqLoc,STANDARD); 
+    :anchorMode=true;
 else (no)
-endif
-if (if hqLoc == null) then (true) 
-:scanHQ hqLoc; 
-else (no)
-endif
-if (if wellLoc == null) then (true) 
-:scanWells wellLoc; 
-else (no)
-endif
-
-:depositResource(rc, ADMANTIUM); 
-
-:depositResource(rc, MANA); 
-
-if (canTakeAnchor(STANDARD)==true) then (true) 
-:takeAnchor(hqLoc,STANDARD); 
-:anchorMode=true;
-else (no)
+    if(if islandLoc == null) then (true)
+    :find available island;
+    while ("for each known island")
+        :find any available island;
+    endwhile  
+    if(if islandLoc == null) then (true)
+    :there are no available islands;
+    else (no)
+    :found an island;
+    endif
 endif
 
-' if (if canCreateLauncher) then (true) 
-' :buildRobot(LAUNCHER); 
-' else (no)
-' endif
-' if (if canCreateBooster) then (true) 
-' :buildRobot(BOOSTER); 
-' else (no)
-' endif
-' if (if canCreateDestabilizer) then (true) 
-' :buildRobot(DESTABILIZER); 
-' else (no)
-' endif
-
-:Continue to part2; 
+:Continue to part3; 
 stop
 @enduml
 
-'       if "canCreateCarrier" then
-'         -left->[true] "createRobot(CARRIER)"
-'       else
-'         if "canCreateLauncher" then
-'           -left->[true] "createRobot(LAUNCHER)"
-'         else
-'           if "canCreateBooster" then
-'             -left->[true] "createRobot(BOOSTER)"
-'           else
-'             if "canCreateDestabilizer" then
-'               -left->[true] "createRobot(DESTABILIZER)"
-'             else
-'               -->[true] "yield (end turn)"
-'             endif
-'           endif
-'         endif
-'       endif
-'     endif
-'   endif
-' endif
-
-' :new page;
-' if (Page.onSecurityCheck) then (true)
-'   :Page.onInit();
-'   if (isForward?) then (no)
-'     :Process controls;
-'     if (continue processing?) then (no)
-'       stop
-'     endif
-
-'     if (isPost?) then (yes)
-'       :Page.onPost();
-'     else (no)
-'       :Page.onGet();
-'     endif
-'     :Page.onRender();
-'   endif
-' else (false)
-' endif
-
-' if (do redirect?) then (yes)
-'   :redirect process;
-' else
-'   if (do forward?) then (yes)
-'     :Forward request;
-'   else (no)
-'     :Render page template;
-'   endif
-' endif
-
-' stop
-' @enduml
 
 ' goto lab
 
