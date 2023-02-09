@@ -5,16 +5,23 @@ start
 
 :from part1; 
 
+if (if canTakeAnchor(STANDARD)==true) then (true) 
+    :takeAnchor(hqLoc,STANDARD); 
+    :anchorMode=true;
+else (no)
+endif
+
 if (if anchorMode==true) then (true) 
     :takeAnchor(hqLoc,STANDARD); 
     :anchorMode=true;
 else (no)
     if(if islandLoc == null) then (true)
     :find available island;
-    while ("for each known island")
+    while (loop thru island array)
         :find any available island;
+        :break;
     endwhile  
-    if(if islandLoc == null) then (true)
+    if(if islandLoc is still null) then (true)
     :there are no available islands;
     else (no)
     :found an island;

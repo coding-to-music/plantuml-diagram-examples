@@ -22,12 +22,6 @@ endif
 
 :depositResource(rc, MANA); 
 
-if (if canTakeAnchor(STANDARD)==true) then (true) 
-:takeAnchor(hqLoc,STANDARD); 
-:anchorMode=true;
-else (no)
-endif
-
 :Continue to part2; 
 stop
 @enduml
