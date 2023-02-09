@@ -211,11 +211,11 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ![BigPicture-Sequence-Diagram.png](/drawings/BigPicture-Sequence-Diagram.png?raw=true)
 
-### Carrier-Strategy-1.png
+### Carrier-Strategy-1a.png
 
 [Link to source file: Carrier-Strategy-1.puml](drawings/Carrier-Strategy-1.puml)
 
-![](/drawings/Carrier-Strategy-1.png?raw=true)
+![](/drawings/Carrier-Strategy-1a.png?raw=true)
 
 ### Carrier-Strategy-2a.png
 
