@@ -6,15 +6,22 @@ start
 :Called on every turn; 
 
 if (if turnCount == 2) then (true) 
-:updateHeadquartersInfo(rc); 
+    :updateHeadquartersInfo(rc); 
 else (no)
 endif
+
 if (if hqLoc == null) then (true) 
-:scanHQ hqLoc; 
+    :scanHQ hqLoc; 
 else (no)
 endif
+
 if (if wellLoc == null) then (true) 
-:scanWells wellLoc; 
+    :scanWells wellLoc; 
+else (no)
+endif
+
+if (if wellLoc != null && canCollectResources(wellLoc, -1)) then (true) 
+    :collectResources(wellLoc); 
 else (no)
 endif
 
