@@ -5,31 +5,51 @@ start
 
 :Run a single turn for a Launcher; 
 
-if (if turnCount == 2) then (true) 
-    :updateHeadquartersInfo(rc); 
-else (no)
-endif
-
 if (if hqLoc == null) then (true) 
     :scanHQ hqLoc; 
 else (no)
 endif
 
-if (if wellLoc == null) then (true) 
-    :scanWells wellLoc; 
+if (if turnCount == 2) then (true) 
+    :updateHeadquartersInfo(rc); 
 else (no)
 endif
 
-if (if wellLoc != null && canCollectResources(wellLoc, -1)) then (true) 
-    :collectResources(wellLoc); 
+:Communication.clearObsoleteEnemies(rc);
+
+' if (if goalLoc == null) then (true) 
+'     :setGoal(rc); 
+' else (no)
+' endif
+
+:try to attack someone;
+
+:int radius = rc.getType().actionRadiusSquared;
+:Team opponent = rc.getTeam().opponent();
+:RobotInfo[] enemies = rc.senseNearbyRobots(radius, opponent);
+
+if (enemies.length > 0) then (true)
+    :set target = getClosestWeakestEnemy(); 
 else (no)
 endif
 
-:depositResource(rc, ADMANTIUM); 
-
-:depositResource(rc, MANA); 
+:Communication.tryWriteMessages(rc);
 
 :Continue to part2; 
 stop
 @enduml
 
+
+' if (if wellLoc == null) then (true) 
+'     :scanWells wellLoc; 
+' else (no)
+' endif
+
+' if (if wellLoc != null && canCollectResources(wellLoc, -1)) then (true) 
+'     :collectResources(wellLoc); 
+' else (no)
+' endif
+
+' :depositResource(rc, ADMANTIUM); 
+
+' :depositResource(rc, MANA); 
