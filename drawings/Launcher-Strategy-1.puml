@@ -1,9 +1,9 @@
-@startuml Carrier-Strategy-1a
+@startuml Launcher-Strategy-1
 !theme toy 
-title Carrier-Strategy-1
+title Launcher-Strategy-1
 start
 
-:Run a single turn for a Carrier; 
+:Run a single turn for a Launcher; 
 
 if (if turnCount == 2) then (true) 
     :updateHeadquartersInfo(rc); 
