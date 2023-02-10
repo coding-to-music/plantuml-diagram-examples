@@ -1,0 +1,56 @@
+@startuml Amplifier-Strategy-1
+!theme toy 
+title Amplifier-Strategy-1
+start
+
+:Run a single turn for a Amplifier; 
+
+if (if hqLoc == null) then (true) 
+    :scanHQ hqLoc; 
+else (no)
+endif
+
+if (if turnCount == 2) then (true) 
+    :updateHeadquartersInfo(rc); 
+else (no)
+endif
+
+if (if wellLoc == null) then (true) 
+    :scanWells wellLoc; 
+else (no)
+endif
+
+:Communication.clearObsoleteEnemies(rc);
+
+:just loiter, don't attack, avoid enemies;
+
+:Continue to part2; 
+stop
+@enduml
+
+' :int radius = rc.getType().actionRadiusSquared;
+' :Team opponent = rc.getTeam().opponent();
+' :RobotInfo[] enemies = rc.senseNearbyRobots(radius, opponent);
+
+' if (enemies.length > 0) then (true)
+'     :set target = getClosestWeakestEnemy(); 
+' else (no)
+' endif
+
+' :Communication.tryWriteMessages(rc);
+
+' :Communication.clearObsoleteEnemies(rc);
+
+' if (if goalLoc == null) then (true) 
+'     :setGoal(rc); 
+' else (no)
+' endif
+
+' if (if wellLoc != null && canCollectResources(wellLoc, -1)) then (true) 
+'     :collectResources(wellLoc); 
+' else (no)
+' endif
+
+' :depositResource(rc, ADMANTIUM); 
+
+' :depositResource(rc, MANA); 
