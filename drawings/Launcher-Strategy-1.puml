@@ -1,6 +1,6 @@
-@startuml Launcher-Strategy-1
+@startuml Launcher-Strategy-1a
 !theme toy 
-title Launcher-Strategy-1
+title Launcher-Strategy-1a
 start
 
 :Run a single turn for a Launcher; 
