@@ -1,0 +1,95 @@
+@startuml Launcher-Strategy-2
+!theme toy 
+title Launcher-Strategy-2
+start
+
+:from part 1; 
+
+if (if target != null) then (true)
+    :we have a target, attack!; 
+    if (if canAttack(target)) then (true)
+        :rc.attack(target.getLocation()); 
+    else (no)
+    endif
+    :Pathing.moveTowards(rc, target.getLocation());
+else (no)
+    :no target, join other launchers and either lead or follow; 
+    :RobotInfo[] allies = rc.senseNearbyRobots(9, rc.getTeam());
+    :int lowestID = rc.getID();
+    :MapLocation leaderPos = null;
+    while (for RobotInfo ally : allies)
+        if (ally.getType() != RobotType.LAUNCHER) then (true)
+            :continue;
+        else (no)
+        endif
+        if (ally.getID() < lowestID) then (true)
+            :lowestID = ally.getID();
+            :leaderPos = ally.getLocation();
+        else (no)
+        endif
+    endwhile
+    if (leaderPos != null) then (true)
+        :follow the leader;
+        :Pathing.moveTowards(rc, leaderPos);
+        :rc.setIndicatorString("Following " + lowestID);
+    else (false)
+        :set center = new MapLocation(rc.getMapWidth()/2, rc.getMapHeight()/2);
+        :Pathing.moveTowards(rc, center);
+        :rc.setIndicatorString("I'm the leader! moving toward center " + center);
+    endif
+endif
+:also try moving randomly;
+:Direction dir = Direction.randomly;
+if (rc.canMove(dir)) then (true)
+    :rc.move(dir);
+else (no)
+endif
+
+:Continue to part3; 
+stop
+@enduml
+
+' if (if hqLoc == null) then (true) 
+'     :scanHQ hqLoc; 
+' else (no)
+' endif
+
+' if (if turnCount == 2) then (true) 
+'     :updateHeadquartersInfo(rc); 
+' else (no)
+' endif
+
+' :Communication.clearObsoleteEnemies(rc);
+
+' ' if (if goalLoc == null) then (true) 
+' '     :setGoal(rc); 
+' ' else (no)
+' ' endif
+
+' :try to attack someone;
+
+' :int radius = rc.getType().actionRadiusSquared;
+' :Team opponent = rc.getTeam().opponent();
+' :RobotInfo[] enemies = rc.senseNearbyRobots(radius, opponent);
+
+' if (enemies.length > 0) then (true)
+'     :set target = getClosestWeakestEnemy(); 
+' else (no)
+' endif
+
+' :Communication.tryWriteMessages(rc);
+
+
+' if (if wellLoc == null) then (true) 
+'     :scanWells wellLoc; 
+' else (no)
+' endif
+
+' if (if wellLoc != null && canCollectResources(wellLoc, -1)) then (true) 
+'     :collectResources(wellLoc); 
+' else (no)
+' endif
+
+' :depositResource(rc, ADMANTIUM); 
+
+' :depositResource(rc, MANA); 
