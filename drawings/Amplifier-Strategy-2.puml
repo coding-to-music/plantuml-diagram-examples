@@ -5,49 +5,129 @@ start
 
 :from part 1; 
 
-if (if target != null) then (true)
-    :we have a target, attack!; 
-    if (if canAttack(target)) then (true)
-        :rc.attack(target.getLocation()); 
-    else (no)
-    endif
-    :Pathing.moveTowards(rc, target.getLocation());
-else (no)
-    :no target, join other launchers and either lead or follow; 
-    :RobotInfo[] allies = rc.senseNearbyRobots(9, rc.getTeam());
-    :int lowestID = rc.getID();
-    :MapLocation leaderPos = null;
-    while (for RobotInfo ally : allies)
-        if (ally.getType() != RobotType.LAUNCHER) then (true)
-            :continue;
-        else (no)
-        endif
-        if (ally.getID() < lowestID) then (true)
-            :lowestID = ally.getID();
-            :leaderPos = ally.getLocation();
-        else (no)
+' // Amplifiers want to avoid getting attacked, just loiter and sense other robots
+:int radius = rc.getType().actionRadiusSquared;
+:Team opponent = rc.getTeam().opponent();
+:RobotInfo[] enemies = rc.senseNearbyRobots(radius, opponent);
+:int lowestHealth = 1000;
+:int smallestDistance = 100;
+:RobotInfo target = null;
+
+:Communication.clearObsoleteEnemies(rc);
+if (enemies.length > 0) (true)
+    while (RobotInfo enemy: enemies) (true)
+        :Communication.reportEnemy(rc, enemy.location);
+        :int enemyHealth = enemy.getHealth();
+        :int enemyDistance = enemy.getLocation().distanceSquaredTo(rc.getLocation());
+        if (enemyHealth < lowestHealth && enemy.getType() != RobotType.HEADQUARTERS) (true)
+            :target = enemy;
+            :lowestHealth = enemyHealth;
+            :smallestDistance = enemyDistance;
+        else if (enemyHealth == lowestHealth) (true)
+            if (enemyDistance < smallestDistance) (true)
+                :target = enemy;
+                :smallestDistance = enemyDistance;
+            else (no)
+            endif    
         endif
     endwhile
-    if (leaderPos != null) then (true)
-        :follow the leader;
-        :Pathing.moveTowards(rc, leaderPos);
-        :rc.setIndicatorString("Following " + lowestID);
-    else (false)
-        :set center = new MapLocation(rc.getMapWidth()/2, rc.getMapHeight()/2);
-        :Pathing.moveTowards(rc, center);
-        :rc.setIndicatorString("I'm the leader! moving toward center " + center);
-    endif
-endif
-:also try moving randomly;
-:Direction dir = Direction.randomly;
-if (rc.canMove(dir)) then (true)
-    :rc.move(dir);
 else (no)
-endif
+endif    
+
+
+:Communication.tryWriteMessages(rc);
+' if (target != null) (true)
+'     if (rc.canAttack(target.getLocation())) {
+'         :rc.attack(target.getLocation());
+'         :rc.setIndicatorString(" AAAA0 Amplifier attacking " + target.getLocation());
+'     else (no)
+'     endif    
+'     :Pathing.moveTowards(rc, target.getLocation());
+'     :rc.setIndicatorString(" BBBB0 Pathing.moveTowards " + target.getLocation());
+' else (no)
+'     :RobotInfo[] allies = rc.senseNearbyRobots(9, rc.getTeam());
+'     :int lowestID = rc.getID();
+'     :MapLocation leaderPos = null;
+'     while (RobotInfo ally : allies)
+'         if (ally.getType() != RobotType.LAUNCHER)
+'             :continue;
+'         else (no)
+'         endif    
+'         if (ally.getID() < lowestID){
+'             :lowestID = ally.getID();
+'             :leaderPos = ally.getLocation();
+'         else (no)
+'         endif    
+'     endwhile
+'     if (leaderPos != null) (true)
+'         :Pathing.moveTowards(rc, leaderPos);
+'         :rc.setIndicatorString("Following " + lowestID);
+'     }
+'     else (no)
+'         :MapLocation center = new MapLocation(rc.getMapWidth()/2, rc.getMapHeight()/2);
+'         ' // MapLocation center = goalLoc;
+'         :Pathing.moveTowards(rc, center);
+'         :rc.setIndicatorString("I'm the leader! moving toward center " + center);
+'     endif    
+' endif    
+' // Also try to move randomly.
+' :Direction dir = RobotPlayer.directions[RobotPlayer.rng.nextInt(RobotPlayer.directions.length)];
+' if (rc.canMove(dir)) (true)
+'     :rc.move(dir);
+'     :rc.setIndicatorString(" YYYY0 rc.move(dir) " + dir);
+'     else (no)
+'     endif    
+' else (no)
+' endif    
 
 :Continue to part3; 
 stop
 @enduml
+
+
+' if (if target != null) then (true)
+'     :we have a target, attack!; 
+'     if (if canAttack(target)) then (true)
+'         :rc.attack(target.getLocation()); 
+'     else (no)
+'     endif
+'     :Pathing.moveTowards(rc, target.getLocation());
+' else (no)
+'     :no target, join other launchers and either lead or follow; 
+'     :RobotInfo[] allies = rc.senseNearbyRobots(9, rc.getTeam());
+'     :int lowestID = rc.getID();
+'     :MapLocation leaderPos = null;
+'     while (for RobotInfo ally : allies)
+'         if (ally.getType() != RobotType.LAUNCHER) then (true)
+'             :continue;
+'         else (no)
+'         endif
+'         if (ally.getID() < lowestID) then (true)
+'             :lowestID = ally.getID();
+'             :leaderPos = ally.getLocation();
+'         else (no)
+'         endif
+'     endwhile
+'     if (leaderPos != null) then (true)
+'         :follow the leader;
+'         :Pathing.moveTowards(rc, leaderPos);
+'         :rc.setIndicatorString("Following " + lowestID);
+'     else (false)
+'         :set center = new MapLocation(rc.getMapWidth()/2, rc.getMapHeight()/2);
+'         :Pathing.moveTowards(rc, center);
+'         :rc.setIndicatorString("I'm the leader! moving toward center " + center);
+'     endif
+' endif
+' :also try moving randomly;
+' :Direction dir = Direction.randomly;
+' if (rc.canMove(dir)) then (true)
+'     :rc.move(dir);
+' else (no)
+' endif
+
+' :Continue to part3; 
+' stop
+' @enduml
 
 ' if (if hqLoc == null) then (true) 
 '     :scanHQ hqLoc; 
