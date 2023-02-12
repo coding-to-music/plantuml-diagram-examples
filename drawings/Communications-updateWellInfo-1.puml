@@ -3,7 +3,7 @@
 title Communications-updateWellInfo-1
 start
 
-:from part 1; 
+' :from part 1; 
 
 ' static void updateWellInfo(RobotController rc, WellInfo well) throws GameActionException {
 ' Boolean printToConsole = false;
@@ -12,29 +12,44 @@ start
 ' if (printToConsole || sometimesTrue) {
 '     System.out.println(logDetails + " PPPP0 updateWellInfo " );
 ' }
-' Boolean stopNow = false;
-' for (int i = 0; i < MAX_STARTING_WELLS; i++) {
-'     if (!stopNow) {                
-'         if (wellLocs[i] == null) {
-'             stopNow = true;
-'             wellLocs[i] = well.getMapLocation();
-'             wellTypes[i] = well.getResourceType();
-'             // wellLocs[i] = (intToLocation(rc, rc.readSharedArray(i)));
-'             // if (rc.readSharedArray(i) == 0) {
-'             if (printToConsole || sometimesTrue) {
-'                 System.out.println(logDetails + " PPPP1 updateWellInfo rc.readSharedArray(i) " + i + " well.getResourceType() " + well.getResourceType() + " well.getMapLocation() " + well.getMapLocation() );
-'                 // System.out.println(logDetails + " PPPP1 updateWellInfo rc.readSharedArray(i) == 0 " + rc.readSharedArray(i) );
-'             }
-'             break;
-'             // }
-'         } else {
-'             // the array has a value, see if the well is already known
-'             if (wellLocs[i] == well.getMapLocation()) {
-'                 stopNow = true;
-'                 if (printToConsole || sometimesTrue) {
-'                     System.out.println(logDetails + " PPPP2 updateWellInfo rc.readSharedArray(i) we already have this location " + i + " well.getResourceType() " + well.getResourceType() + " well.getMapLocation() " + well.getMapLocation() );
-'                     // System.out.println(logDetails + " PPPP1 updateWellInfo rc.readSharedArray(i) == 0 " + rc.readSharedArray(i) );
-'                     rc.resign();
+
+:updateWellInfo(RobotController rc, WellInfo well);
+:Boolean stopNow = false;
+while (for (int i = 0; i < MAX_STARTING_WELLS; i++) )
+    if (!stopNow) then (true)                
+        if (wellLocs[i] == null) then (true)
+            :stopNow = true;
+            :wellLocs[i] = well.getMapLocation();
+            :wellTypes[i] = well.getResourceType();
+            ' // if (rc.readSharedArray(i) == 0) {
+            ' break;
+            ' // }
+        else (no)
+            :the array has a value, see if the well is already known;
+            if (wellLocs[i] == well.getMapLocation()) then (true)
+                :stopNow = true;
+            else (no)
+            endif
+        endif
+    else (no)
+    endif
+endwhile
+
+:return void;
+
+stop
+@enduml
+
+
+            ' // wellLocs[i] = (intToLocation(rc, rc.readSharedArray(i)));
+            ' if (printToConsole || sometimesTrue) {
+            '     System.out.println(logDetails + " PPPP1 updateWellInfo rc.readSharedArray(i) " + i + " well.getResourceType() " + well.getResourceType() + " well.getMapLocation() " + well.getMapLocation() );
+            '     // System.out.println(logDetails + " PPPP1 updateWellInfo rc.readSharedArray(i) == 0 " + rc.readSharedArray(i) );
+            ' }
+                ' if (printToConsole || sometimesTrue) {
+                '     System.out.println(logDetails + " PPPP2 updateWellInfo rc.readSharedArray(i) we already have this location " + i + " well.getResourceType() " + well.getResourceType() + " well.getMapLocation() " + well.getMapLocation() );
+                '     // System.out.println(logDetails + " PPPP1 updateWellInfo rc.readSharedArray(i) == 0 " + rc.readSharedArray(i) );
+                '     rc.resign();
 '                 }
 
 '             } 
@@ -42,11 +57,7 @@ start
 '     }
 ' }
     
-:Continue to part3; 
-stop
-@enduml
-
-
+' :Continue to part3; 
 
 ' if (if target != null) then (true)
 '     :we have a nearby enemy, move away;

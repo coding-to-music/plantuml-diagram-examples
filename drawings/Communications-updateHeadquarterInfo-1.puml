@@ -3,7 +3,7 @@
 title Communications-updateHeadquarterInfo-1
 start
 
-:from part 1; 
+' :from part 1; 
 
 ' static void updateHeadquarterInfo(RobotController rc) throws GameActionException {
 ' Boolean printToConsole = false;
@@ -12,21 +12,35 @@ start
 ' if (printToConsole || sometimesTrue) {
 '     System.out.println(logDetails + " 220 updateHeadquarterInfo " );
 ' }
-' if (RobotPlayer.turnCount == 2) {
-'     for (int i = 0; i < GameConstants.MAX_STARTING_HEADQUARTERS; i++) {
-'         headquarterLocs[i] = (intToLocation(rc, rc.readSharedArray(i)));
-'         if (rc.readSharedArray(i) == 0) {
+
+:updateHeadquarterInfo(RobotController rc);
+
+:add HQ into an array if we don't have it already;
+
+:double-check this is working correctly;
+
+:only needed on the second turn of the game;
+
+if (if RobotPlayer.turnCount == 2) then (true)
+    while (for (int i = 0; i < GameConstants.MAX_STARTING_HEADQUARTERS; i++) ) 
+        :headquarterLocs[i] = (intToLocation(rc, rc.readSharedArray(i)));
+        if (if rc.readSharedArray(i) == 0) then (true)
+            :break;
+        else (no)
+        endif
+    endwhile    
+else (no)
+endif
+
+:return void; 
+stop
+@enduml
 '             if (printToConsole || sometimesTrue) {
 '                 System.out.println(logDetails + " 221 updateHeadquarterInfo rc.readSharedArray(i) == 0 " + rc.readSharedArray(i) );
 '             }
-'                         break;
 '         }
 '     }
 ' }
-
-:Continue to part3; 
-stop
-@enduml
 
 ' if (if target != null) then (true)
 '     :we have a nearby enemy, move away;

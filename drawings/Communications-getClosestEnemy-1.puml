@@ -3,7 +3,7 @@
 title Communications-getClosestEnemy-1
 start
 
-:from part 1; 
+' :from part 1; 
 
 ' static MapLocation getClosestEnemy(RobotController rc) {
 ' Boolean printToConsole = false;
@@ -24,27 +24,33 @@ start
 ' if (printToConsole || sometimesTrue) {
 '     System.out.println(logDetails + " 77770 getClosestEnemy " );
 ' }
-' MapLocation answer = null;
-' for (int i = STARTING_ENEMY_IDX; i < GameConstants.SHARED_ARRAY_LENGTH; i++) {
-'     final int value;
-'     try {
-'         value = rc.readSharedArray(i);
-'         final MapLocation m = intToLocation(rc, value);
-'         if (m != null && (answer == null || rc.getLocation().distanceSquaredTo(m) < rc.getLocation().distanceSquaredTo(answer))) {
-'             answer = m;
-'             if (printToConsole || sometimesTrue) {
-'                 System.out.println(logDetails + " 77771 getClosestEnemy answer = " + answer );
+
+:getClosestEnemy(RobotController rc);
+:MapLocation answer = null;
+while (for (int i = STARTING_ENEMY_IDX; i < GameConstants.SHARED_ARRAY_LENGTH; i++) )
+    :final int value;
+    while (try)
+        :value = rc.readSharedArray(i);
+        :final MapLocation m = intToLocation(rc, value);
+        if (m != null && \n(answer == null || \nrc.getLocation().distanceSquaredTo(m) < \nrc.getLocation().distanceSquaredTo(answer))) ) then (true)
+            :answer = m;
+        else (no)
+        endif
+    endwhile
+endwhile
+:return answer;
+
+stop
+@enduml
+
+            ' if (printToConsole || sometimesTrue) {
+            '     System.out.println(logDetails + " 77771 getClosestEnemy answer = " + answer );
 '             }
 '                     }
 '     } catch (GameActionException e) {
 '         continue;
 '     }
 ' }
-' return answer;
-
-:Continue to part3; 
-stop
-@enduml
 
 ' if (if target != null) then (true)
 '     :we have a nearby enemy, move away;

@@ -3,7 +3,7 @@
 title Communications-clearObsoleteEnemies-1
 start
 
-:from part 1; 
+' :from part 1; 
 
 ' static void clearObsoleteEnemies(RobotController rc) {
 ' Boolean printToConsole = false;
@@ -12,15 +12,27 @@ start
 ' if (printToConsole || sometimesTrue) {
 '     System.out.println(logDetails + " 9990 clearObsoleteEnemies " );
 ' }
-' for (int i = STARTING_ENEMY_IDX; i < GameConstants.SHARED_ARRAY_LENGTH; i++) {
-'     try {
-'         MapLocation mapLoc = intToLocation(rc, rc.readSharedArray(i));
-'         if (mapLoc == null) {
-'             continue;
-'         }
-'         if (rc.canSenseLocation(mapLoc) && rc.senseNearbyRobots(mapLoc, AREA_RADIUS, rc.getTeam().opponent()).length == 0) {
-'             Message msg = new Message(i, locationToInt(rc, null), RobotPlayer.turnCount);
-'             messagesQueue.add(msg);
+
+:clearObsoleteEnemies(RobotController rc);
+
+while (for (int i = STARTING_ENEMY_IDX; i < GameConstants.SHARED_ARRAY_LENGTH; i++) )
+    while (try)
+        :MapLocation mapLoc = intToLocation(rc, rc.readSharedArray(i));
+        if (mapLoc == null) then (true)
+            :continue;
+        else (no)
+        endif
+        if (rc.canSenseLocation(mapLoc) && \nrc.senseNearbyRobots(mapLoc, AREA_RADIUS, \nrc.getTeam().opponent()).length == 0) then (true)
+            :Message msg = new Message(i, locationToInt(rc, null), RobotPlayer.turnCount);
+            :messagesQueue.add(msg);
+        else (no)
+        endif
+    endwhile
+endwhile
+:return void; 
+stop
+@enduml
+
 '             if (printToConsole || sometimesTrue) {
 '                 System.out.println(logDetails + " 9991 clearObsoleteEnemies messagesQueue.add(msg) msg = " + msg );
 '             }
@@ -30,10 +42,6 @@ start
 '     }
 
 ' }
-
-:Continue to part3; 
-stop
-@enduml
 
 ' if (if target != null) then (true)
 '     :we have a nearby enemy, move away;

@@ -3,7 +3,7 @@
 title Communications-reportEnemy-1
 start
 
-:from part 1; 
+' :from part 1; 
 
 ' static void reportEnemy(RobotController rc, MapLocation enemy) {
 ' Boolean printToConsole = false;
@@ -12,35 +12,42 @@ start
 ' if (printToConsole || sometimesTrue) {
 '     System.out.println(logDetails + " 88880 reportEnemy " );
 ' }
-' int slot = -1;
-' for (int i = STARTING_ENEMY_IDX; i < GameConstants.SHARED_ARRAY_LENGTH; i++) {
-'     try {
-'         MapLocation prevEnemy = intToLocation(rc, rc.readSharedArray(i));
-'         if (prevEnemy == null) {
-'             slot = i;
-'             break;
-'         } else if (prevEnemy.distanceSquaredTo(enemy) < AREA_RADIUS) {
-'             return;
-'         }
+
+:reportEnemy(RobotController rc, MapLocation enemy);
+
+:int slot = -1;
+while (for (int i = STARTING_ENEMY_IDX; i < GameConstants.SHARED_ARRAY_LENGTH; i++)
+    while (try) 
+        :MapLocation prevEnemy = intToLocation(rc, rc.readSharedArray(i));
+        if (if prevEnemy == null) then (true)
+            :slot = i;
+            :break;
+        else (no)
+            if (if prevEnemy.distanceSquaredTo(enemy) < AREA_RADIUS) then (true)
+                :return;
+            else (no)
+            endif
+        endif
+if (slot != -1) then (true)
+    :Message msg = new Message(slot, locationToInt(rc, enemy), RobotPlayer.turnCount);
+    :messagesQueue.add(msg);
+
+:return void; 
+stop
+@enduml
+
+    ' if (printToConsole || sometimesTrue) {
+    '     System.out.println(logDetails + " 88881 reportEnemy slot != -1 messagesQueue.add(msg) msg = " + msg);
+    ' }
 '     } catch (GameActionException e) {
 '         continue;
 '     }
 ' }
-' if (slot != -1) {
-'     Message msg = new Message(slot, locationToInt(rc, enemy), RobotPlayer.turnCount);
-'     messagesQueue.add(msg);
-'     if (printToConsole || sometimesTrue) {
-'         System.out.println(logDetails + " 88881 reportEnemy slot != -1 messagesQueue.add(msg) msg = " + msg);
-'     }
 ' } else {
 '     if (printToConsole || sometimesTrue) {
 '         System.out.println(logDetails + " 88882 reportEnemy slot == -1 don't do anything " );
 '     }
 ' }
-
-:Continue to part3; 
-stop
-@enduml
 
 ' if (if target != null) then (true)
 '     :we have a nearby enemy, move away;

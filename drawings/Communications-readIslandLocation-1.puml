@@ -3,7 +3,7 @@
 title Communications-readIslandLocation-1
 start
 
-:from part 1; 
+' :from part 1; 
 
 ' static MapLocation readIslandLocation(RobotController rc, int islandId) {
 ' Boolean printToConsole = false;
@@ -24,11 +24,22 @@ start
 ' if (printToConsole || sometimesTrue) {
 '     // System.out.println(logDetails + " 880 readIslandLocation islandId = " + islandId );
 ' }
-' try {
-'     islandId = islandId + STARTING_ISLAND_IDX;
-'     int islandInt = rc.readSharedArray(islandId);
-'     int idx = islandInt >> (HEALTH_BITS + TEAM_BITS);
 
+:readIslandLocation(RobotController rc, int islandId);
+
+while (try)
+    :islandId = islandId + STARTING_ISLAND_IDX;
+    :int islandInt = rc.readSharedArray(islandId);
+    :int idx = islandInt >> (HEALTH_BITS + TEAM_BITS);
+    :return intToLocation(rc, idx);
+endwhile
+
+:else return null;
+
+stop
+@enduml
+
+' } catch (GameActionException e) {} 
 '     if (printToConsole || sometimesTrue) {
 '         if (intToLocation(rc, idx) == null) {
 '         //    System.out.println(logDetails + " 881 readIslandLocation islandId = " + islandId + " intToLocation(rc, idx) = " + intToLocation(rc, idx) + " idx = " + idx + " NULL, there is no island" );
@@ -36,14 +47,6 @@ start
 '             System.out.println(logDetails + " 882 readIslandLocation islandId = " + islandId + " intToLocation(rc, idx) = " + intToLocation(rc, idx) + " idx = " + idx + " NON-NULL, there is an island" );
 '         }
 '     }
-
-'     return intToLocation(rc, idx);
-' } catch (GameActionException e) {} 
-' return null;
-
-:Continue to part3; 
-stop
-@enduml
 
 ' if (if target != null) then (true)
 '     :we have a nearby enemy, move away;

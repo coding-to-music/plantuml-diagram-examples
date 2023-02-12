@@ -3,7 +3,7 @@
 title Communications-tryWriteMessages-1
 start
 
-:from part 1; 
+' :from part 1; 
 
 ' static void tryWriteMessages(RobotController rc) throws GameActionException {
 ' Boolean printToConsole = false;
@@ -24,23 +24,35 @@ start
 ' if (printToConsole || sometimesTrue) {
 '     System.out.println(logDetails + " 330 tryWriteMessages " );
 ' }
-' messagesQueue.removeIf(msg -> msg.turnAdded + OUTDATED_TURNS_AMOUNT < RobotPlayer.turnCount);
-' // Can always write (0, 0), so just checks are we in range to write
-' if (rc.canWriteSharedArray(0, 0)) {
-'     while (messagesQueue.size() > 0 ) {
-'         Message msg = messagesQueue.remove(0); // Take from front or back?
-'         if (rc.canWriteSharedArray(msg.idx, msg.value)) {
-'             rc.writeSharedArray(msg.idx, msg.value);
+
+:tryWriteMessages(RobotController rc);
+
+:messageQueue next;
+
+:messagesQueue.removeIf(\nmsg -> msg.turnAdded + OUTDATED_TURNS_AMOUNT < RobotPlayer.turnCount);
+:Can always write (0, 0), so just checks are we in range to ;
+if (if rc.canWriteSharedArray(0, 0)) then (true)
+    while (while messagesQueue.size() > 0 ) 
+        :Message msg = messagesQueue.remove(0); 
+        :Hmmm, Take from front or back?;
+        if (if rc.canWriteSharedArray(msg.idx, msg.value)) then (true)
+            :rc.writeSharedArray(msg.idx, msg.value);
+        else (no)
+        endif
+    endwhile
+else (no)
+endif
+:return void; 
+stop
+@enduml
+
+
 '             if (printToConsole || sometimesTrue) {
 '                 System.out.println(logDetails + " 331 tryWriteMessages msg.idx = " + msg.idx + " msg.value = " + msg.value);
 '             }
 '                     }
 '     }
 ' }
-
-:Continue to part3; 
-stop
-@enduml
 
 ' if (if target != null) then (true)
 '     :we have a nearby enemy, move away;

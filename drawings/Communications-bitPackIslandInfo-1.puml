@@ -3,7 +3,8 @@
 title Communications-bitpackIslandInfo-1
 start
 
-:from part 1; 
+' :from part 1; 
+
 
 ' static int bitPackIslandInfo(RobotController rc, int islandId, MapLocation closestLoc) {
 ' Boolean printToConsole = false;
@@ -12,20 +13,20 @@ start
 ' if (printToConsole || sometimesTrue) {
 '     System.out.println(logDetails + " 660 bitPackIslandInfo " );
 ' }
-' int islandInt = locationToInt(rc, closestLoc);
-' islandInt = islandInt << (TOTAL_BITS - MAPLOC_BITS);
-' try {
-'     Team teamHolding = rc.senseTeamOccupyingIsland(islandId);
-'     islandInt += teamHolding.ordinal() << (TOTAL_BITS - MAPLOC_BITS - TEAM_BITS);
-'     int islandHealth = rc.senseAnchorPlantedHealth(islandId);
-'     int healthEncoding = (int) Math.ceil((double) islandHealth / HEALTH_SIZE);
-'     islandInt += healthEncoding;
-'     return islandInt;
-' } catch (GameActionException e) {
-'     return islandInt;
-' }
 
-:Continue to part3; 
+:bitPackIslandInfo(RobotController rc, int islandId, MapLocation closestLoc);
+
+:int islandInt = locationToInt(rc, closestLoc);
+:islandInt = islandInt << (TOTAL_BITS - MAPLOC_BITS);
+while (try)
+    :Team teamHolding = rc.senseTeamOccupyingIsland(islandId);
+    :islandInt += teamHolding.ordinal() << (TOTAL_BITS - MAPLOC_BITS - TEAM_BITS);
+    :int islandHealth = rc.senseAnchorPlantedHealth(islandId);
+    :int healthEncoding = (int) Math.ceil((double) islandHealth / HEALTH_SIZE);
+    :islandInt += healthEncoding;
+    :return islandInt;
+endwhile
+:return islandInt; 
 stop
 @enduml
 

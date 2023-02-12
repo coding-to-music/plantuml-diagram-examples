@@ -3,7 +3,7 @@
 title Communications-readTeamHoldingIsland-1
 start
 
-:from part 1; 
+' :from part 1; 
 
 ' static Team readTeamHoldingIsland(RobotController rc, int islandId) {
 ' Boolean printToConsole = false;
@@ -12,29 +12,35 @@ start
 ' if (printToConsole || sometimesTrue) {
 '     System.out.println(logDetails + " 770 readTeamHoldingIsland " );
 ' }
-' try {
-'     islandId = islandId + STARTING_ISLAND_IDX;
-'     int islandInt = rc.readSharedArray(islandId);
-'     int healthMask = 0b111;
-'     int health = islandInt & healthMask;
-'     int team = (islandInt >> HEALTH_BITS) % 0b1;
-'     if (health > 0) {
+
+:readTeamHoldingIsland(RobotController rc, int islandId);
+
+while (try) 
+    :islandId = islandId + STARTING_ISLAND_IDX;
+    :int islandInt = rc.readSharedArray(islandId);
+    :int healthMask = 0b111;
+    :int health = islandInt & healthMask;
+    :int team = (islandInt >> HEALTH_BITS) % 0b1;
+    if (health > 0) then (true)
+        :return Team.values()[team];
+    else (no)
+    endif
+endwhile
+
+:return Team.NEUTRAL;
+
+stop
+@enduml
+
+
+'     }
+' } catch (GameActionException e) {} 
 '         if (printToConsole || sometimesTrue) {
 '             System.out.println(logDetails + " 771 readTeamHoldingIsland return Team.values()[team] = " + Team.values()[team] + " team = " + team);
 '         }
-'         return Team.values()[team];
-'     }
-' } catch (GameActionException e) {} 
-
 ' if (printToConsole || sometimesTrue) {
 '     System.out.println(logDetails + " 772 readTeamHoldingIsland return Team.NEUTRAL = " + Team.NEUTRAL );
 ' }
-
-' return Team.NEUTRAL;
-
-:Continue to part3; 
-stop
-@enduml
 
 ' if (if target != null) then (true)
 '     :we have a nearby enemy, move away;

@@ -3,7 +3,7 @@
 title Communications-readMaxIslandHealth-1
 start
 
-:from part 1; 
+' :from part 1; 
 
 ' static int readMaxIslandHealth(RobotController rc, int islandId) {
 ' Boolean printToConsole = false;
@@ -12,24 +12,26 @@ start
 ' if (printToConsole || sometimesTrue) {
 '     System.out.println(logDetails + " 990 readMaxIslandHealth " );
 ' }
-' try {
-'     islandId = islandId + STARTING_ISLAND_IDX;
-'     int islandInt = rc.readSharedArray(islandId);
-'     int healthMask = 0b111;
-'     int health = islandInt & healthMask;
 
-'     if (printToConsole || sometimesTrue) {
-'         System.out.println(logDetails + " 991 readMaxIslandHealth health*HEALTH_SIZE = " + health*HEALTH_SIZE + " health = " + health + " HEALTH_SIZE = " + HEALTH_SIZE );
-'     }
+:readMaxIslandHealth(RobotController rc, int islandId);
+while (try)
+    :islandId = islandId + STARTING_ISLAND_IDX;
+    :int islandInt = rc.readSharedArray(islandId);
+    :int healthMask = 0b111;
+    :int health = islandInt & healthMask;
+    :return health*HEALTH_SIZE;
+endwhile
 
-'     return health*HEALTH_SIZE;
+:return health*HEALTH_SIZE; 
+stop
+@enduml
+
 ' } catch (GameActionException e) {
 '     return -1;
 ' } 
-
-:Continue to part3; 
-stop
-@enduml
+'     if (printToConsole || sometimesTrue) {
+'         System.out.println(logDetails + " 991 readMaxIslandHealth health*HEALTH_SIZE = " + health*HEALTH_SIZE + " health = " + health + " HEALTH_SIZE = " + HEALTH_SIZE );
+'     }
 
 ' if (if target != null) then (true)
 '     :we have a nearby enemy, move away;

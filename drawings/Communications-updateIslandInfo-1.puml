@@ -3,49 +3,60 @@
 title Communications-updateIslandInfo-1
 start
 
-:from part 1; 
+' :from part 1; 
 
 ' static void updateIslandInfo(RobotController rc, int id) throws GameActionException {
 ' Boolean printToConsole = false;
 ' Boolean sometimesTrue = false;
 
-' if (headquarterLocs[0] == null) {
-'     return;
-' }
+:updateIslandInfo(RobotController rc, int id);
+if (if headquarterLocs[0] == null) then (true)
+    :return;
+else (no)
+endif
+
+
+:MapLocation closestIslandLoc = null;
+:int closestDistance = -1;
+:MapLocation[] islandLocs = rc.senseNearbyIslandLocations(id);
+while (for (MapLocation loc : islandLocs) )
+    :int distance = headquarterLocs[0].distanceSquaredTo(loc);
+    if (if closestIslandLoc == null || distance < closestDistance) then (true)
+        :closestDistance = distance;
+        :closestIslandLoc = loc;
+    else (no)
+    endif
+endwhile
+
+:Remember reading is cheaper than writing \nso we don't want to write without knowing if it's helpful;
+:int idx = id + STARTING_ISLAND_IDX;
+:int oldIslandValue = rc.readSharedArray(idx);
+:int updatedIslandValue = bitPackIslandInfo(rc, idx, closestIslandLoc);
+if (if oldIslandValue != updatedIslandValue) then (true)
+    :Message msg = new Message(idx, updatedIslandValue, RobotPlayer.turnCount);
+    :messagesQueue.add(msg);
+else (no)
+endif
+
+:return void; 
+stop
+@enduml
+
 ' anotherString = logDetails;
 
 ' if (printToConsole || sometimesTrue) {
 '     System.out.println(logDetails + " 550 updateIslandInfo " );
 ' }
 
-' MapLocation closestIslandLoc = null;
-' int closestDistance = -1;
-' MapLocation[] islandLocs = rc.senseNearbyIslandLocations(id);
-' for (MapLocation loc : islandLocs) {
-'     int distance = headquarterLocs[0].distanceSquaredTo(loc);
-'     if (closestIslandLoc == null || distance < closestDistance) {
-'         closestDistance = distance;
-'         closestIslandLoc = loc;
-
 '         if (printToConsole || sometimesTrue) {
 '             System.out.println(logDetails + " 551 updateIslandInfo closestIslandLoc = " + closestIslandLoc );
 '         }        
 '     }
 ' }
-' // Remember reading is cheaper than writing so we don't want to write without knowing if it's helpful
-' int idx = id + STARTING_ISLAND_IDX;
-' int oldIslandValue = rc.readSharedArray(idx);
-' int updatedIslandValue = bitPackIslandInfo(rc, idx, closestIslandLoc);
-' if (oldIslandValue != updatedIslandValue) {
-'     Message msg = new Message(idx, updatedIslandValue, RobotPlayer.turnCount);
-'     messagesQueue.add(msg);
 '     if (printToConsole || sometimesTrue) {
 '         System.out.println(logDetails + " 552 updateIslandInfo msg = " + msg + " oldIslandValue = " + oldIslandValue + " updatedIslandValue = " + updatedIslandValue );
 '     }
 
-:Continue to part3; 
-stop
-@enduml
 
 ' if (if target != null) then (true)
 '     :we have a nearby enemy, move away;
