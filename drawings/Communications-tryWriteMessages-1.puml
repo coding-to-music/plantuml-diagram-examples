@@ -5,6 +5,38 @@ start
 
 :from part 1; 
 
+' static void tryWriteMessages(RobotController rc) throws GameActionException {
+' Boolean printToConsole = false;
+' Boolean sometimesTrue = false;
+
+' // logDetails = rc.getTeam() + ":"
+' // + rc.getType() + "#" 
+' // + rc.getID()  
+' logDetails = " Health: " + rc.getHealth()  
+' + " Location: " + rc.getLocation()
+' + " RobotCount: " + rc.getRobotCount()
+' + " AD: " + rc.getResourceAmount(ResourceType.ADAMANTIUM) 
+' + " MN: " + rc.getResourceAmount(ResourceType.MANA)  
+' + " EX: " + rc.getResourceAmount(ResourceType.ELIXIR)
+' // + " getClosestEnemy: " + Communication.getClosestEnemy(rc)  
+' + " NumAnchors: " + rc.getNumAnchors(Anchor.STANDARD);   
+
+' if (printToConsole || sometimesTrue) {
+'     System.out.println(logDetails + " 330 tryWriteMessages " );
+' }
+' messagesQueue.removeIf(msg -> msg.turnAdded + OUTDATED_TURNS_AMOUNT < RobotPlayer.turnCount);
+' // Can always write (0, 0), so just checks are we in range to write
+' if (rc.canWriteSharedArray(0, 0)) {
+'     while (messagesQueue.size() > 0 ) {
+'         Message msg = messagesQueue.remove(0); // Take from front or back?
+'         if (rc.canWriteSharedArray(msg.idx, msg.value)) {
+'             rc.writeSharedArray(msg.idx, msg.value);
+'             if (printToConsole || sometimesTrue) {
+'                 System.out.println(logDetails + " 331 tryWriteMessages msg.idx = " + msg.idx + " msg.value = " + msg.value);
+'             }
+'                     }
+'     }
+' }
 
 :Continue to part3; 
 stop

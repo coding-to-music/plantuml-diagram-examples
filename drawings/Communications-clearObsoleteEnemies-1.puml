@@ -1,41 +1,34 @@
-@startuml Communications-reportEnemy-1
+@startuml Communications-clearObsoleteEnemies-1
 !theme toy 
-title Communications-reportEnemy-1
+title Communications-clearObsoleteEnemies-1
 start
 
 :from part 1; 
 
-' static void reportEnemy(RobotController rc, MapLocation enemy) {
+' static void clearObsoleteEnemies(RobotController rc) {
 ' Boolean printToConsole = false;
 ' Boolean sometimesTrue = false;
 
 ' if (printToConsole || sometimesTrue) {
-'     System.out.println(logDetails + " 88880 reportEnemy " );
+'     System.out.println(logDetails + " 9990 clearObsoleteEnemies " );
 ' }
-' int slot = -1;
 ' for (int i = STARTING_ENEMY_IDX; i < GameConstants.SHARED_ARRAY_LENGTH; i++) {
 '     try {
-'         MapLocation prevEnemy = intToLocation(rc, rc.readSharedArray(i));
-'         if (prevEnemy == null) {
-'             slot = i;
-'             break;
-'         } else if (prevEnemy.distanceSquaredTo(enemy) < AREA_RADIUS) {
-'             return;
+'         MapLocation mapLoc = intToLocation(rc, rc.readSharedArray(i));
+'         if (mapLoc == null) {
+'             continue;
 '         }
+'         if (rc.canSenseLocation(mapLoc) && rc.senseNearbyRobots(mapLoc, AREA_RADIUS, rc.getTeam().opponent()).length == 0) {
+'             Message msg = new Message(i, locationToInt(rc, null), RobotPlayer.turnCount);
+'             messagesQueue.add(msg);
+'             if (printToConsole || sometimesTrue) {
+'                 System.out.println(logDetails + " 9991 clearObsoleteEnemies messagesQueue.add(msg) msg = " + msg );
+'             }
+'                     }
 '     } catch (GameActionException e) {
 '         continue;
 '     }
-' }
-' if (slot != -1) {
-'     Message msg = new Message(slot, locationToInt(rc, enemy), RobotPlayer.turnCount);
-'     messagesQueue.add(msg);
-'     if (printToConsole || sometimesTrue) {
-'         System.out.println(logDetails + " 88881 reportEnemy slot != -1 messagesQueue.add(msg) msg = " + msg);
-'     }
-' } else {
-'     if (printToConsole || sometimesTrue) {
-'         System.out.println(logDetails + " 88882 reportEnemy slot == -1 don't do anything " );
-'     }
+
 ' }
 
 :Continue to part3; 

@@ -5,6 +5,41 @@ start
 
 :from part 1; 
 
+' static MapLocation readIslandLocation(RobotController rc, int islandId) {
+' Boolean printToConsole = false;
+' Boolean sometimesTrue = false;
+
+' // logDetails = rc.getTeam() + ":"
+' // + rc.getType() + "#" 
+' // + rc.getID()  
+' logDetails = " Health: " + rc.getHealth()  
+' + " Location: " + rc.getLocation()
+' + " RobotCount: " + rc.getRobotCount()
+' + " AD: " + rc.getResourceAmount(ResourceType.ADAMANTIUM) 
+' + " MN: " + rc.getResourceAmount(ResourceType.MANA)  
+' + " EX: " + rc.getResourceAmount(ResourceType.ELIXIR)
+' // + " getClosestEnemy: " + Communication.getClosestEnemy(rc)  
+' + " NumAnchors: " + rc.getNumAnchors(Anchor.STANDARD);   
+
+' if (printToConsole || sometimesTrue) {
+'     // System.out.println(logDetails + " 880 readIslandLocation islandId = " + islandId );
+' }
+' try {
+'     islandId = islandId + STARTING_ISLAND_IDX;
+'     int islandInt = rc.readSharedArray(islandId);
+'     int idx = islandInt >> (HEALTH_BITS + TEAM_BITS);
+
+'     if (printToConsole || sometimesTrue) {
+'         if (intToLocation(rc, idx) == null) {
+'         //    System.out.println(logDetails + " 881 readIslandLocation islandId = " + islandId + " intToLocation(rc, idx) = " + intToLocation(rc, idx) + " idx = " + idx + " NULL, there is no island" );
+'         } else {
+'             System.out.println(logDetails + " 882 readIslandLocation islandId = " + islandId + " intToLocation(rc, idx) = " + intToLocation(rc, idx) + " idx = " + idx + " NON-NULL, there is an island" );
+'         }
+'     }
+
+'     return intToLocation(rc, idx);
+' } catch (GameActionException e) {} 
+' return null;
 
 :Continue to part3; 
 stop

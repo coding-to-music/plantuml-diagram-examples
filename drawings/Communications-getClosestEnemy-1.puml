@@ -5,6 +5,42 @@ start
 
 :from part 1; 
 
+' static MapLocation getClosestEnemy(RobotController rc) {
+' Boolean printToConsole = false;
+' Boolean sometimesTrue = false;
+
+' // logDetails = rc.getTeam() + ":"
+' // + rc.getType() + "#" 
+' // + rc.getID()  
+' logDetails = " Health: " + rc.getHealth()  
+' + " Location: " + rc.getLocation()
+' + " RobotCount: " + rc.getRobotCount()
+' + " AD: " + rc.getResourceAmount(ResourceType.ADAMANTIUM) 
+' + " MN: " + rc.getResourceAmount(ResourceType.MANA)  
+' + " EX: " + rc.getResourceAmount(ResourceType.ELIXIR)
+' // + " getClosestEnemy: " + Communication.getClosestEnemy(rc)  
+' + " NumAnchors: " + rc.getNumAnchors(Anchor.STANDARD);   
+
+' if (printToConsole || sometimesTrue) {
+'     System.out.println(logDetails + " 77770 getClosestEnemy " );
+' }
+' MapLocation answer = null;
+' for (int i = STARTING_ENEMY_IDX; i < GameConstants.SHARED_ARRAY_LENGTH; i++) {
+'     final int value;
+'     try {
+'         value = rc.readSharedArray(i);
+'         final MapLocation m = intToLocation(rc, value);
+'         if (m != null && (answer == null || rc.getLocation().distanceSquaredTo(m) < rc.getLocation().distanceSquaredTo(answer))) {
+'             answer = m;
+'             if (printToConsole || sometimesTrue) {
+'                 System.out.println(logDetails + " 77771 getClosestEnemy answer = " + answer );
+'             }
+'                     }
+'     } catch (GameActionException e) {
+'         continue;
+'     }
+' }
+' return answer;
 
 :Continue to part3; 
 stop

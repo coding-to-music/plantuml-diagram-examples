@@ -5,6 +5,41 @@ start
 
 :from part 1; 
 
+' static void addWell(RobotController rc, WellInfo well) throws GameActionException {
+' Boolean printToConsole = false;
+' Boolean sometimesTrue = false;
+
+' // logDetails = rc.getTeam() + ":"
+' // + rc.getType() + "#" 
+' // + rc.getID()  
+' logDetails = " Health: " + rc.getHealth()  
+' + " Location: " + rc.getLocation()
+' + " RobotCount: " + rc.getRobotCount()
+' + " AD: " + rc.getResourceAmount(ResourceType.ADAMANTIUM) 
+' + " MN: " + rc.getResourceAmount(ResourceType.MANA)  
+' + " EX: " + rc.getResourceAmount(ResourceType.ELIXIR)
+' // + " getClosestEnemy: " + Communication.getClosestEnemy(rc)  
+' + " NumAnchors: " + rc.getNumAnchors(Anchor.STANDARD);   
+
+' anotherString = logDetails;
+
+' if (printToConsole || sometimesTrue) {
+'     System.out.println(logDetails + " 440 addWell " );
+' }
+
+' MapLocation me = rc.getLocation();
+' for (int i = 0; i < MAX_STARTING_WELLS; i++) {
+'     if (rc.readSharedArray(i) == 0) {
+
+'         if (printToConsole || sometimesTrue) {
+'             anotherString = logDetails + " 441 addWell " + "rc.writeSharedArray i = " + i + " locationToInt(rc, me) = " + locationToInt(rc, me) + " intToLocation(rc, i) = " + intToLocation(rc, locationToInt(rc, me));
+'             System.out.println(anotherString );
+'         }
+        
+'         rc.writeSharedArray(i, locationToInt(rc, me));
+'         break;
+'     }
+' }
 
 :Continue to part3; 
 stop

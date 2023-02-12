@@ -5,6 +5,24 @@ start
 
 :from part 1; 
 
+' static void updateHeadquarterInfo(RobotController rc) throws GameActionException {
+' Boolean printToConsole = false;
+' Boolean sometimesTrue = false;
+
+' if (printToConsole || sometimesTrue) {
+'     System.out.println(logDetails + " 220 updateHeadquarterInfo " );
+' }
+' if (RobotPlayer.turnCount == 2) {
+'     for (int i = 0; i < GameConstants.MAX_STARTING_HEADQUARTERS; i++) {
+'         headquarterLocs[i] = (intToLocation(rc, rc.readSharedArray(i)));
+'         if (rc.readSharedArray(i) == 0) {
+'             if (printToConsole || sometimesTrue) {
+'                 System.out.println(logDetails + " 221 updateHeadquarterInfo rc.readSharedArray(i) == 0 " + rc.readSharedArray(i) );
+'             }
+'                         break;
+'         }
+'     }
+' }
 
 :Continue to part3; 
 stop

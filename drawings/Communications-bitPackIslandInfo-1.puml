@@ -5,6 +5,25 @@ start
 
 :from part 1; 
 
+' static int bitPackIslandInfo(RobotController rc, int islandId, MapLocation closestLoc) {
+' Boolean printToConsole = false;
+' Boolean sometimesTrue = false;
+
+' if (printToConsole || sometimesTrue) {
+'     System.out.println(logDetails + " 660 bitPackIslandInfo " );
+' }
+' int islandInt = locationToInt(rc, closestLoc);
+' islandInt = islandInt << (TOTAL_BITS - MAPLOC_BITS);
+' try {
+'     Team teamHolding = rc.senseTeamOccupyingIsland(islandId);
+'     islandInt += teamHolding.ordinal() << (TOTAL_BITS - MAPLOC_BITS - TEAM_BITS);
+'     int islandHealth = rc.senseAnchorPlantedHealth(islandId);
+'     int healthEncoding = (int) Math.ceil((double) islandHealth / HEALTH_SIZE);
+'     islandInt += healthEncoding;
+'     return islandInt;
+' } catch (GameActionException e) {
+'     return islandInt;
+' }
 
 :Continue to part3; 
 stop
