@@ -309,6 +309,12 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ![](/drawings/Communications-bitPackIslandInfo-1.png?raw=true)
 
+### Communications-clearObsoleteEnemies-1.png
+
+[Link to source file: Communications-clearObsoleteEnemies-1.puml](drawings/Communications-clearObsoleteEnemies-1.puml)
+
+![](/drawings/Communications-clearObsoleteEnemies-1.png?raw=true)
+
 ### Communications-getClosestEnemy-1.png
 
 [Link to source file: Communications-getClosestEnemy-1.puml](drawings/Communications-getClosestEnemy-1.puml)
