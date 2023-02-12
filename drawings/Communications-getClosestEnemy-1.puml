@@ -1,4 +1,4 @@
-@startuml Communications-getClosestEnemy-1
+@startuml Communications-getClosestEnemy-1a
 !theme toy 
 title Communications-getClosestEnemy-1
 start

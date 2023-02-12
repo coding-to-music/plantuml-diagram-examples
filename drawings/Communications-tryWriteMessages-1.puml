@@ -1,4 +1,4 @@
-@startuml Communications-tryWriteMessages-1
+@startuml Communications-tryWriteMessages-1a
 !theme toy 
 title Communications-tryWriteMessages-1
 start
