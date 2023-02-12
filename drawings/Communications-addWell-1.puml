@@ -1,0 +1,57 @@
+@startuml Communications-addWell-1
+!theme toy 
+title Communications-addWell-1
+start
+
+:from part 1; 
+
+
+:Continue to part3; 
+stop
+@enduml
+
+' if (if target != null) then (true)
+'     :we have a nearby enemy, move away;
+'     if (if rc.canAttack(target.getLocation())) then (true)
+'         :rc.attack(target.getLocation());
+'         :rc.setIndicatorString(" AAAA0 Amplifier attacking " + target.getLocation());
+'     else (no)
+'     endif    
+'     :Pathing.moveTowards(rc, target.getLocation());
+'     :rc.setIndicatorString(" BBBB0 Pathing.moveTowards " + target.getLocation());
+' else (no)
+'     :no nearby enemy, good;
+'     :below is about joining with other launchers;
+'     :RobotInfo[] allies = rc.senseNearbyRobots(9, rc.getTeam());
+'     :int lowestID = rc.getID();
+'     :MapLocation leaderPos = null;
+'     while (RobotInfo ally : allies)
+'         if (if ally.getType() != RobotType.LAUNCHER) then (true)
+'             :continue;
+'         else (no)
+'         endif    
+'         if (if ally.getID() < lowestID) then (true)
+'             :lowestID = ally.getID();
+'             :leaderPos = ally.getLocation();
+'         else (no)
+'         endif    
+'     endwhile
+'     if (if leaderPos != null) then (true)
+'         :Pathing.moveTowards(rc, leaderPos);
+'         :rc.setIndicatorString("Following " + lowestID);
+'     else (no)
+'         :MapLocation center = new MapLocation(rc.getMapWidth()/2, rc.getMapHeight()/2);
+'         ' // MapLocation center = goalLoc;
+'         :Pathing.moveTowards(rc, center);
+'         :rc.setIndicatorString("I'm the leader! moving toward center " + center);
+'     endif    
+' endif    
+' :Also try to move randomly;
+' :Direction dir = RobotPlayer.directions[RobotPlayer.rng.nextInt(RobotPlayer.directions.length)];
+' if (if rc.canMove(dir)) then (true)
+'     :rc.move(dir);
+'     :rc.setIndicatorString(" YYYY0 rc.move(dir) " + dir);
+' else (no)
+' endif    
+
+

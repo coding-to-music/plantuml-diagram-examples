@@ -289,6 +289,80 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ![](/drawings/Headquarters-Strategy-proposed-2a.png?raw=true)
 
+## Communications Classes
+
+### Communications-addHeadquarter-1.png
+
+[Link to source file: Communications-addHeadquarter-1.puml](drawings/Communications-addHeadquarter-1.puml)
+
+![](/drawings/Communications-addHeadquarter-1.png?raw=true)
+
+### Communications-addWell-1.png
+
+[Link to source file: Communications-addWell-1.puml](drawings/Communications-addWell-1.puml)
+
+![](/drawings/Communications-addWell-1.png?raw=true)
+
+### Communications-bitPackIslandInfo-1.png
+
+[Link to source file: Communications-bitPackIslandInfo-1.puml](drawings/Communications-bitPackIslandInfo-1.puml)
+
+![](/drawings/Communications-bitPackIslandInfo-1.png?raw=true)
+
+### Communications-getClosestEnemy-1.png
+
+[Link to source file: Communications-getClosestEnemy-1.puml](drawings/Communications-getClosestEnemy-1.puml)
+
+![](/drawings/Communications-getClosestEnemy-1.png?raw=true)
+
+### Communications-readIslandLocation-1.png
+
+[Link to source file: Communications-readIslandLocation-1.puml](drawings/Communications-readIslandLocation-1.puml)
+
+![](/drawings/Communications-readIslandLocation-1.png?raw=true)
+
+### Communications-readMaxIslandHealth-1.png
+
+[Link to source file: Communications-readMaxIslandHealth-1.puml](drawings/Communications-readMaxIslandHealth-1.puml)
+
+![](/drawings/Communications-readMaxIslandHealth-1.png?raw=true)
+
+### Communications-readTeamHoldingIsland-1.png
+
+[Link to source file: Communications-readTeamHoldingIsland-1.puml](drawings/Communications-readTeamHoldingIsland-1.puml)
+
+![](/drawings/Communications-readTeamHoldingIsland-1.png?raw=true)
+
+### Communications-reportEnemy-1.png
+
+[Link to source file: Communications-reportEnemy-1.puml](drawings/Communications-reportEnemy-1.puml)
+
+![](/drawings/Communications-reportEnemy-1.png?raw=true)
+
+### Communications-tryWriteMessages-1.png
+
+[Link to source file: Communications-tryWriteMessages-1.puml](drawings/Communications-tryWriteMessages-1.puml)
+
+![](/drawings/Communications-tryWriteMessages-1.png?raw=true)
+
+### Communications-updateHeadquarterInfo-1.png
+
+[Link to source file: Communications-updateHeadquarterInfo-1.puml](drawings/Communications-updateHeadquarterInfo-1.puml)
+
+![](/drawings/Communications-updateHeadquarterInfo-1.png?raw=true)
+
+### Communications-updateIslandInfo-1.png
+
+[Link to source file: Communications-updateIslandInfo-1.puml](drawings/Communications-updateIslandInfo-1.puml)
+
+![](/drawings/Communications-updateIslandInfo-1.png?raw=true)
+
+### Communications-updateWellInfo-1.png
+
+[Link to source file: Communications-updateWellInfo-1.puml](drawings/Communications-updateWellInfo-1.puml)
+
+![](/drawings/Communications-updateWellInfo-1.png?raw=true)
+
 ### RobotPlayer-Horizontal.png
 
 [Link to source file: RobotPlayer-Horizontal.puml](drawings/RobotPlayer-Horizontal.puml)
