@@ -1,0 +1,25 @@
+@startuml Carrier-functions-depositResource-1
+!theme toy 
+title Carrier-functions-depositResource-1
+start
+
+' static void depositResource(RobotController rc, ResourceType type) throws GameActionException {
+' int amount = rc.getResourceAmount(type);
+' if(amount > 0) {
+'     if(rc.canTransferResource(hqLoc, type, amount)) rc.transferResource(hqLoc, type, amount);
+
+:return void; 
+stop
+@enduml
+
+' :addWell(RobotController rc, WellInfo well)
+' :MapLocation me = rc.getLocation();
+' while (for (int i = 0; i < MAX_STARTING_WELLS; i++)) 
+'     if (rc.readSharedArray(i) == 0) then (true)
+'         :rc.writeSharedArray(i, locationToInt(rc, me));
+'         :break;
+'     else (no)
+'     endif
+' endwhile
+
+

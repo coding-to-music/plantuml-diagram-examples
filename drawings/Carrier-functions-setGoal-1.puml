@@ -1,0 +1,59 @@
+@startuml Carrier-functions-setGoal-1
+!theme toy 
+title Carrier-functions-setGoal-1
+start
+
+' static void setGoal(RobotController rc) throws GameActionException {
+
+' int x = rng.nextInt(rc.getMapWidth());
+' int y = rng.nextInt(rc.getMapHeight());
+' goalLoc = new MapLocation(x, y);
+
+' // goalLoc = inverseHQLoc;
+' //
+
+' // goalLoc = new MapLocation(rc.getMapWidth()/4, rc.getMapHeight()/4);
+' Pathing.moveTowards(rc, goalLoc);
+' rc.setIndicatorString(" JJ setting the goal " + goalLoc);
+' if (goalDebug) {
+'     System.out.println(logDetails + " JJ setGoal goalLoc " + goalLoc );
+' }
+' }
+' // canTransferResource(MapLocation, ResourceType, int) - Method in interface battlecode.common.RobotController
+' // Tests whether the robot can transfer resource to a given location.
+
+' // transferResource(MapLocation, ResourceType, int) - Method in interface battlecode.common.RobotController
+' // Transfers resource to given location.
+
+' // UPGRADE_WELL_AMOUNT - Static variable in class battlecode.common.GameConstants
+' // The amount of adamantium or mana needed to upgrade a well's transfer rate
+
+' // UPGRADE_TO_ELIXIR - Static variable in class battlecode.common.GameConstants
+' // The amount of adamantium or mana needed to upgrade a well to elixir
+
+' // buildCostElixir - Variable in enum battlecode.common.RobotType
+' // Elixir cost to build a given robot or building.
+
+' // elixirCost - Variable in enum battlecode.common.Anchor
+' // The cost to build this anchor in elixir.
+
+' // static void scanWells(RobotController rc) throws GameActionException {
+' //     WellInfo[] wells = rc.senseNearbyWells();
+' //     if(wells.length > 0) wellLoc = wells[0].getMapLocation();
+' // }
+
+:return void; 
+stop
+@enduml
+
+' :addWell(RobotController rc, WellInfo well)
+' :MapLocation me = rc.getLocation();
+' while (for (int i = 0; i < MAX_STARTING_WELLS; i++)) 
+'     if (rc.readSharedArray(i) == 0) then (true)
+'         :rc.writeSharedArray(i, locationToInt(rc, me));
+'         :break;
+'     else (no)
+'     endif
+' endwhile
+
+

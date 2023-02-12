@@ -369,6 +369,46 @@ This outputs your sequence diagram to a file called sequenceDiagram.png.
 
 ![](/drawings/Communications-updateWellInfo-1a.png?raw=true)
 
+## Carrier functions
+
+### Carrier-functions-depositResource-1.png
+
+[Link to source file: Carrier-functions-depositResource-1.puml](drawings/Carrier-functions-depositResource-1.puml)
+
+![](/drawings/Carrier-functions-depositResource-1.png?raw=true)
+
+### Carrier-functions-getTotalResources-1.png
+
+[Link to source file: Carrier-functions-getTotalResources-1.puml](drawings/Carrier-functions-getTotalResources-1.puml)
+
+![](/drawings/Carrier-functions-getTotalResources-1.png?raw=true)
+
+### Carrier-functions-scanHQ-1.png
+
+[Link to source file: Carrier-functions-scanHQ-1.puml](drawings/Carrier-functions-scanHQ-1.puml)
+
+![](/drawings/Carrier-functions-scanHQ-1.png?raw=true)
+
+### Carrier-functions-scanIslands-1.png
+
+[Link to source file: Carrier-functions-scanIslands-1.puml](drawings/Carrier-functions-scanIslands-1.puml)
+
+![](/drawings/Carrier-functions-scanIslands-1.png?raw=true)
+
+### Carrier-functions-scanWells-1.png
+
+[Link to source file: Carrier-functions-scanWells-1.puml](drawings/Carrier-functions-scanWells-1.puml)
+
+![](/drawings/Carrier-functions-scanWells-1.png?raw=true)
+
+### Carrier-functions-setGoal-1.png
+
+[Link to source file: Carrier-functions-setGoal-1.puml](drawings/Carrier-functions-setGoal-1.puml)
+
+![](/drawings/Carrier-functions-setGoal-1.png?raw=true)
+
+## RobotPlayer functions
+
 ### RobotPlayer-Horizontal.png
 
 [Link to source file: RobotPlayer-Horizontal.puml](drawings/RobotPlayer-Horizontal.puml)
