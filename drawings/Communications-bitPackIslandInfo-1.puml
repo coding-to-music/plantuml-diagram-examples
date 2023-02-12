@@ -1,6 +1,6 @@
-@startuml Communications-bitpackIslandInfo-1
+@startuml Communications-bitPackIslandInfo-1
 !theme toy 
-title Communications-bitpackIslandInfo-1
+title Communications-bitPackIslandInfo-1
 start
 
 ' :from part 1; 
