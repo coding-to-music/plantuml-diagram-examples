@@ -3,17 +3,20 @@
 title Carrier-functions-scanHQ-1
 start
 
-' static void scanHQ(RobotController rc) throws GameActionException {
-' RobotInfo[] robots = rc.senseNearbyRobots();
-' for(RobotInfo robot : robots) {
-'     if(robot.getTeam() == rc.getTeam() && robot.getType() == RobotType.HEADQUARTERS) {
-'         hqLoc = robot.getLocation();
-'         negativeHQLoc = robot.getLocation().translate( -1 * (rc.getMapWidth() - 1), -1 * (rc.getMapHeight() - 1));
-'         int x = -1 * negativeHQLoc.x;
-'         int y = -1 * negativeHQLoc.y;
+:scanHQ(RobotController rc) throws GameActionException;
+:RobotInfo[] robots = rc.senseNearbyRobots();
+while (for(RobotInfo robot : robots))
+    if(robot.getTeam() == rc.getTeam() && \nrobot.getType() == RobotType.HEADQUARTERS) then (true)
+        :hqLoc = robot.getLocation();
+        :negativeHQLoc = robot.getLocation().translate( -1 * \n(rc.getMapWidth() - 1), -1 * (rc.getMapHeight() - 1));
+        :int x = -1 * negativeHQLoc.x;
+        :int y = -1 * negativeHQLoc.y;
 
-'         inverseHQLoc = new MapLocation(x, y); 
-'         break;
+        :inverseHQLoc = new MapLocation(x, y); 
+        :break;
+    else (no)
+    endif
+endwhile
 
 :return void; 
 stop
