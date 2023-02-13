@@ -6,7 +6,7 @@ start
 :scanHQ(RobotController rc) throws GameActionException;
 :RobotInfo[] robots = rc.senseNearbyRobots();
 while (for(RobotInfo robot : robots))
-    if(robot.getTeam() == rc.getTeam() && \nrobot.getType() == RobotType.HEADQUARTERS) then (true)
+    if(if robot.getTeam() == rc.getTeam() && \nrobot.getType() == RobotType.HEADQUARTERS) then (true)
         :hqLoc = robot.getLocation();
         :negativeHQLoc = robot.getLocation().translate( -1 * \n(rc.getMapWidth() - 1), -1 * (rc.getMapHeight() - 1));
         :int x = -1 * negativeHQLoc.x;
