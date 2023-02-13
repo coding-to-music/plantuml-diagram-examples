@@ -16,16 +16,6 @@ if(if wells.length > 0) then (true)
     :get a MapLocation for each island;
 
     while (for(WellInfo well : wells) ))
-        :this is all commented out;
-        if (if rc.senseTeamOccupyingIsland(well) == Team.NEUTRAL) then (true)
-            :MapLocation[] locs = rc.senseNearbyIslandLocations(well);
-            if(if locs.length > 0) then (true)
-                :islandLoc = locs[0];
-                :break;
-            else (no)
-            endif
-        else (no)
-        endif
         :Communication.updateWellInfo(rc, well);
     endwhile
 else (no)
@@ -36,6 +26,16 @@ endif
 stop
 @enduml
 
+        ' :this is all commented out;
+        ' if (if rc.senseTeamOccupyingIsland(well) == Team.NEUTRAL) then (true)
+        '     :MapLocation[] locs = rc.senseNearbyIslandLocations(well);
+        '     if(if locs.length > 0) then (true)
+        '         :islandLoc = locs[0];
+        '         :break;
+        '     else (no)
+        '     endif
+        ' else (no)
+        ' endif
 ' // logDetails = rc.getTeam() + ":"
 ' // + rc.getType() + "#" 
 ' // + rc.getID()  

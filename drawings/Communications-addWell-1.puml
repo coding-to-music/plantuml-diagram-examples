@@ -31,6 +31,7 @@ start
 :MapLocation me = rc.getLocation();
 while (for (int i = 0; i < MAX_STARTING_WELLS; i++)) 
     if (rc.readSharedArray(i) == 0) then (true)
+        :should be using the well locationToInt, not me;
         :rc.writeSharedArray(i, locationToInt(rc, me));
         :break;
     else (no)
