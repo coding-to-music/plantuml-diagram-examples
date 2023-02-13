@@ -3,22 +3,26 @@
 title Carrier-functions-setGoal-1
 start
 
-' static void setGoal(RobotController rc) throws GameActionException {
+:setGoal(RobotController rc) throws GameActionException;
 
-' int x = rng.nextInt(rc.getMapWidth());
-' int y = rng.nextInt(rc.getMapHeight());
-' goalLoc = new MapLocation(x, y);
+:currently just go to the center;
 
+:int x = rng.nextInt(rc.getMapWidth());
+:int y = rng.nextInt(rc.getMapHeight());
+:goalLoc = new MapLocation(x, y);
+
+:Pathing.moveTowards(rc, goalLoc);
+:rc.setIndicatorString(" JJ setting the goal " + goalLoc);
+
+' if (goalDebug) then (true)
+'     System.out.println(logDetails + " JJ setGoal goalLoc " + goalLoc );
+' else (no)
+' endif
+
+' // goalLoc = new MapLocation(rc.getMapWidth()/4, rc.getMapHeight()/4);
 ' // goalLoc = inverseHQLoc;
 ' //
 
-' // goalLoc = new MapLocation(rc.getMapWidth()/4, rc.getMapHeight()/4);
-' Pathing.moveTowards(rc, goalLoc);
-' rc.setIndicatorString(" JJ setting the goal " + goalLoc);
-' if (goalDebug) {
-'     System.out.println(logDetails + " JJ setGoal goalLoc " + goalLoc );
-' }
-' }
 ' // canTransferResource(MapLocation, ResourceType, int) - Method in interface battlecode.common.RobotController
 ' // Tests whether the robot can transfer resource to a given location.
 

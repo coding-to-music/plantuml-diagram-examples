@@ -4,9 +4,37 @@ title Carrier-functions-scanWells-1
 start
 
 ' static void scanWells(RobotController rc) throws GameActionException {
-' WellInfo[] wells = rc.senseNearbyWells();
 
-' numWells = wells.length;
+:scanWells(RobotController rc);
+:WellInfo[] wells = rc.senseNearbyWells();
+
+:numWells = wells.length;
+
+if(if wells.length > 0) then (true)
+    :wellDetails = "";
+    :wellLoc = wells[0].getMapLocation();
+    :get a MapLocation for each island;
+
+    while (for(WellInfo well : wells) ))
+        :this is all commented out;
+        if (if rc.senseTeamOccupyingIsland(well) == Team.NEUTRAL) then (true)
+            :MapLocation[] locs = rc.senseNearbyIslandLocations(well);
+            if(if locs.length > 0) then (true)
+                :islandLoc = locs[0];
+                :break;
+            else (no)
+            endif
+        else (no)
+        endif
+        :Communication.updateWellInfo(rc, well);
+    endwhile
+else (no)
+endif
+
+
+:return void; 
+stop
+@enduml
 
 ' // logDetails = rc.getTeam() + ":"
 ' // + rc.getType() + "#" 
@@ -20,27 +48,6 @@ start
 ' + " EX: " + rc.getResourceAmount(ResourceType.ELIXIR)
 ' // + " getClosestEnemy: " + Communication.getClosestEnemy(rc)  
 ' + " NumAnchors: " + rc.getNumAnchors(Anchor.STANDARD);   
-
-
-' if(wells.length > 0) {
-'     wellDetails = "";
-'     wellLoc = wells[0].getMapLocation();
-'     // get a MapLocation for each island
-'     for(WellInfo well : wells) {
-'         // if(rc.senseTeamOccupyingIsland(well) == Team.NEUTRAL) {
-'         //     MapLocation[] locs = rc.senseNearbyIslandLocations(well);
-'         //     if(locs.length > 0) {
-'         //         islandLoc = locs[0];
-'         //         break;
-'         //     }
-'         // }
-
-'         Communication.updateWellInfo(rc, well);
-
-
-:return void; 
-stop
-@enduml
 
 ' :addWell(RobotController rc, WellInfo well)
 ' :MapLocation me = rc.getLocation();

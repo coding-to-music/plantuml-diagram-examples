@@ -3,12 +3,12 @@
 title Carrier-functions-getTotalResources-1
 start
 
-' static int getTotalResources(RobotController rc) {
-' return rc.getResourceAmount(ResourceType.ADAMANTIUM) 
-'     + rc.getResourceAmount(ResourceType.MANA) 
-'     + rc.getResourceAmount(ResourceType.ELIXIR);
+:static int getTotalResources(RobotController rc);
 
-:return void; 
+:return rc.getResourceAmount(ResourceType.ADAMANTIUM) 
+    + rc.getResourceAmount(ResourceType.MANA) 
+    + rc.getResourceAmount(ResourceType.ELIXIR);
+
 stop
 @enduml
 
