@@ -3,17 +3,20 @@
 title Carrier-functions-scanIslands-1
 start
 
-' static void scanIslands(RobotController rc) throws GameActionException {
-' int[] ids = rc.senseNearbyIslands();
-' for(int id : ids) {
-'     if(rc.senseTeamOccupyingIsland(id) == Team.NEUTRAL) {
-'         MapLocation[] locs = rc.senseNearbyIslandLocations(id);
-'         if(locs.length > 0) {
-'             islandLoc = locs[0];
-'             break;
-'         }
-'     }
-'     Communication.updateIslandInfo(rc, id);
+:static void scanIslands(RobotController rc);
+:int[] ids = rc.senseNearbyIslands();
+while (for(int id : ids)) then (true)
+    if(if rc.senseTeamOccupyingIsland(id) == Team.NEUTRAL) then (true)
+        :MapLocation[] locs = rc.senseNearbyIslandLocations(id);
+        if(if locs.length > 0) then (true)
+            :islandLoc = locs[0];
+            :break;
+        else (no)
+        endif
+    :Communication.updateIslandInfo(rc, id);
+    else (no)
+    endif
+endwhile
 
 :return void; 
 stop
